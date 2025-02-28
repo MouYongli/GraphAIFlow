@@ -1,10 +1,8 @@
-// /src/app/page.tsx
-
-export default function KnowledgeHomePage() {
+"use strict";
+export default function KnowledgePage() {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Knowledge Module</h1>
-      <p>This is the Knowledge module homepage.</p>
+      <p>Hello</p>
     </div>
   );
 }
