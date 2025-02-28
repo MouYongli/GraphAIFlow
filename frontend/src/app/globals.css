@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 你也可以在此处添加自定义全局样式 */
+:root {
+  --background-light: #ffffff;
+  --foreground-light: #111111;
+  --background-dark: #0a0a0a;
+  --foreground-dark: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: var(--background-dark);
+    --foreground-light: var(--foreground-dark);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-light);
+  color: var(--foreground-light);
+}
