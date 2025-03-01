@@ -1,0 +1,15 @@
+{
+    "home": {
+        "title": "Medical Guidelines Recommendation System",
+        "subtitle": "Using RAG Pipeline and AI workflows to provide professional medical Q&A services",
+        "try_now": "Try Now"
+    },
+    "nav": {
+        "home": "Home",
+        "chat": "Chat",
+        "studio": "Studio", 
+        "knowledge": "Knowledge",
+        "dashboard": "Dashboard",
+        "sign_in": "Sign In"
+    }
+}

@@ -8,7 +8,7 @@ const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), {
   ssr: false
 })
 
-export default function ForceGraph() {
+export default function OntologyGraph() {
   // 假设我们离线解析 RDF 获得以下 JSON，
   // 这里直接手写(硬编码) { nodes, edges } -> 变为 react-force-graph 需要的 { nodes, links }
   const graphData = {

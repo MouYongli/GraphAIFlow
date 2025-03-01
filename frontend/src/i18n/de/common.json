@@ -1,0 +1,15 @@
+{
+    "home": {
+        "title": "Medizinische Richtlinien-Empfehlungssystem",
+        "subtitle": "Verwendung von RAG-Pipeline und KI-Workflows für professionelle medizinische Frage-und-Antwort-Dienste",
+        "try_now": "Jetzt ausprobieren"
+    },
+    "nav": {
+        "home": "Startseite",
+        "chat": "Chat",
+        "studio": "Studio",
+        "knowledge": "Wissensdatenbank",
+        "dashboard": "Dashboard",
+        "sign_in": "Anmelden"
+    }
+} 

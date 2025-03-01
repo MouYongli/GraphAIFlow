@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
 import KnowledgeSidebar from "@/components/knowledge/KnowledgeSidebar";
 
 export default function KnowledgeLayout({
