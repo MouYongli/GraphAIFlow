@@ -1,6 +1,5 @@
 "use client";
 import "./globals.css";
-import type { Metadata } from "next";
 import React, { useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
@@ -9,7 +8,6 @@ import Header from "@/components/common/Header";
 import { getOptions, languages } from '@/i18n/settings';
 
 const i18n = i18next.createInstance();
-
 i18n.use(initReactI18next);
 
 export default function RootLayout({
@@ -34,13 +32,13 @@ export default function RootLayout({
         const resources = translations.reduce((acc, { lang, translation }) => ({
           ...acc,
           [lang]: {
-            common: translation
+            common: translation,
           }
         }), {});
 
         await i18n.init({
           ...getOptions(),
-          resources
+          resources,
         });
 
         setInitialized(true);
@@ -51,26 +49,21 @@ export default function RootLayout({
 
     initI18n();
   }, []);
-  if (!initialized) {
-    return (
-      <html>
-        <body>
-          <div>Loading...</div>
-        </body>
-      </html>
-    );
-  }
-  
+
   return (
     <html lang="en">
       <body>
-        <I18nextProvider i18n={i18n}>
-          {/* 全局头部 (如导航、Logo等) */}
-          <Header />
-
-          {/* 页面内容 */}
-          {children}
-        </I18nextProvider>
+        {initialized ? (
+          <I18nextProvider i18n={i18n}>
+            {/* 全局头部 (如导航、Logo等) */}
+            <Header />
+            {/* 页面内容 */}
+            {children}
+          </I18nextProvider>
+        ) : (
+          // 即使在加载状态下，也保持相同的外层结构
+          <div>Loading...</div>
+        )}
       </body>
     </html>
   );
