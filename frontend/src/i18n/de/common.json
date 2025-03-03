@@ -1,7 +1,7 @@
 {
     "home": {
-        "title": "Medizinische Richtlinien-Empfehlungssystem",
-        "subtitle": "Verwendung von RAG-Pipeline und KI-Workflows für professionelle medizinische Frage-und-Antwort-Dienste",
+        "title": "TourRec",
+        "subtitle": "Ein Empfehlungssystem für personalisierte Reisepläne",
         "try_now": "Jetzt ausprobieren"
     },
     "nav": {
@@ -11,5 +11,19 @@
         "knowledge": "Wissensdatenbank",
         "dashboard": "Dashboard",
         "sign_in": "Anmelden"
+    },
+    "sidebar": {
+        "knowledge": {
+            "title": "Wissensdatenbank",
+            "ontology": {
+                "title": "Ontologien",
+                "subtitle": "Zeige die Ontologien"
+            },
+            "graph":
+            {
+                "title": "Graphen",
+                "subtitle": "Zeige die Graphen"
+            }
+        }
     }
 } 

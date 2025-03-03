@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Nav from "./Nav";
 import { UserIcon } from "@heroicons/react/24/outline";

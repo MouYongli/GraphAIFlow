@@ -8,6 +8,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
+import { useTranslation } from 'react-i18next';
 
 
 export default function KnowledgeSidebar() {
@@ -16,6 +17,8 @@ export default function KnowledgeSidebar() {
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);
   };
+
+  const { t } = useTranslation();
 
   return (
     <aside
@@ -32,7 +35,7 @@ export default function KnowledgeSidebar() {
             <div className="flex items-center space-x-2">
               <LightBulbIcon className="h-6 w-6" />
               <span className="text-xl font-bold whitespace-nowrap">
-                Knowledge
+                {t('sidebar.knowledge.title')}
               </span>
             </div>
             {/* 右侧：收起按钮 */}
@@ -66,7 +69,7 @@ export default function KnowledgeSidebar() {
         >
           {/* <CubeTransparentIcon className="h-6 w-6" /> */}
           <TbBinaryTreeFilled className="h-6 w-6" />
-          {sidebarOpen && <span className="ml-2">Ontology</span>}
+          {sidebarOpen && <span className="ml-2">{t('sidebar.knowledge.ontology.title')}</span>}
         </Link>
 
         {/* Knowledge Graphs */}
@@ -76,7 +79,7 @@ export default function KnowledgeSidebar() {
           title="Knowledge Graphs"
         >
           <PiShareNetworkFill className="h-6 w-6" />
-          {sidebarOpen && <span className="ml-2">Knowledge Graphs</span>}
+          {sidebarOpen && <span className="ml-2">{t('sidebar.knowledge.graph.title')}</span>}
         </Link>
       </nav>
     </aside>

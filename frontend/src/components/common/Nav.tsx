@@ -2,10 +2,10 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslation } from 'react-i18next';
 
 export default function Nav() {
   const pathname = usePathname();
-
     
   let selectedKey = 'Home';
   if (pathname.startsWith('/chat')) {
@@ -17,12 +17,13 @@ export default function Nav() {
   } 
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Chat", href: "/chat" },
-    { name: "Knowledge", href: "/knowledge" },
-    { name: "Studio", href: "/studio" },
+    { name: "Home", href: "/", key: "home" },
+    { name: "Chat", href: "/chat", key: "chat" },
+    { name: "Knowledge", href: "/knowledge", key: "knowledge" },
+    { name: "Studio", href: "/studio", key: "studio" },
   ];
 
+  const { t } = useTranslation();
 
   return (
     <nav className="flex space-x-6">
@@ -36,7 +37,7 @@ export default function Nav() {
               isActive ? "underline" : ""
             }`}
           >
-            {item.name}
+          {t(`nav.${item.key}`)}
           </Link>
         );
       })}

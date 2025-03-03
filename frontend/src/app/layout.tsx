@@ -5,20 +5,12 @@ import React, { useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { Inter } from "next/font/google";
 import Header from "@/components/common/Header";
 import { getOptions, languages } from '@/i18n/settings';
 
 const i18n = i18next.createInstance();
 
 i18n.use(initReactI18next);
-
-const inter = Inter({ subsets: ["latin"] });
-
-const metadata: Metadata = {
-  title: "My Next.js 13 App",
-  description: "An example project with Tailwind, Headless UI, etc.",
-};
 
 export default function RootLayout({
   children,
@@ -71,7 +63,7 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body>
         <I18nextProvider i18n={i18n}>
           {/* 全局头部 (如导航、Logo等) */}
           <Header />

@@ -1,7 +1,7 @@
 {
     "home": {
-        "title": "Medical Guidelines Recommendation System",
-        "subtitle": "Using RAG Pipeline and AI workflows to provide professional medical Q&A services",
+        "title": "TourRec",
+        "subtitle": "A recommendation system for personalized travel itineraries",
         "try_now": "Try Now"
     },
     "nav": {
@@ -11,5 +11,19 @@
         "knowledge": "Knowledge",
         "dashboard": "Dashboard",
         "sign_in": "Sign In"
+    },
+    "sidebar": {
+        "knowledge": {
+            "title": "Knowledge",
+            "ontology": {
+                "title": "Ontologies",
+                "subtitle": "View the ontologies"
+            },
+            "graph":
+            {
+                "title": "Graphs",
+                "subtitle": "View the graphs"
+            }
+        }
     }
 }
