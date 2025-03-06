@@ -1,0 +1,29 @@
+{
+    "home": {
+        "title": "TourRec",
+        "subtitle": "一个个性化旅行计划推荐系统",
+        "try_now": "立即体验"
+    },
+    "nav": {
+        "home": "首页",
+        "chat": "对话",
+        "knowledge": "知识库",
+        "studio": "工作室",
+        "dashboard": "仪表盘",
+        "sign_in": "登录"
+    },
+    "sidebar": {
+        "knowledge": {
+            "title": "知识库",
+            "ontology": {
+                "title": "本体",
+                "subtitle": "查看和编辑知识库的本体"
+            },
+            "graph":
+            {
+                "title": "图",
+                "subtitle": "查看知识图谱"
+            }
+        }
+    }
+}
