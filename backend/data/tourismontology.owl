@@ -1,0 +1,5555 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36">
+    <Prefix name="" IRI="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="untitled-ontology-36" IRI="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#"/>
+    <Declaration>
+        <Class IRI="http://www.geonames.org/ontology#Class"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.geonames.org/ontology#Code"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.geonames.org/ontology#Detail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessibleParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActivityAndExperience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdministrativeArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdultEntertainment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#African_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AmusementPark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Amusement_Park"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aparthotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apartment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aquarium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtGallery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bakery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BarOrPub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeautySalon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BedAndBreakfast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beijing_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Boat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BoatTerminal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BodyOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BookStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Botanical_Garden"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Botel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BowlingAlley"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brewery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bridge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuddhistTemple"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Buffet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bungalow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BunkerHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BusStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BusStop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CafeOrCoffeeShop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Campground"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Canal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cantonese_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CapsuleHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Casino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CateringIndustry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatholicChurch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaveHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cemetery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Church"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CityCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CityHall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CivicStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClothingStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coffee_Shop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CollegeOrUniversity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComedyClub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComputerStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Continent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConvenienceStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CountryHouseHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Courthouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crayfish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Creative_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crematorium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CulturalActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultural_Street_Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DaySpa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DefenceEstablishment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dentist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepartmentStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Distillery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drink_Shop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DryCleaningOrLaundry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EducationalOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectronicsStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElementarySchool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Embassy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmergencyService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntertainmentActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EntertainmentBusiness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventVenue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExerciseGym"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FastFoodRestaurant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FireStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Florist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FoodEstablishment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GolfCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GovernmentBuilding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GovernmentOffice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grilled_Meat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GroceryStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GuestHouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HairSalon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthClub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighRatedLF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighSchool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HinduTemple"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HobbyShop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HolidayHome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Home-style_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hospital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hostal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hostel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotpot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#House"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HouseBoat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humanities_and_Historical_Sites"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hunan_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IceCreamShop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IceHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Inn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternetCafe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Japanese_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JewelryStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Korean_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LakeBodyOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Landform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LandmarksOrHistoricalBuildings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegislativeBuilding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Library"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiquorStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalBusiness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LodgingFacility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Loft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowRatedLF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumRatedLF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Memorial_Site"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MensClothingStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleSchool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Middle_Eastern_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobilePhoneStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Modern_Architecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mosque"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Motel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mountain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MovieTheater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Museum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusicStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusicVenue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NailSalon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Natural_Scenery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NightClub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Noodle_Shops"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Northeastern_Chinese_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OceanBodyOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherTypes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Other_Cuisines"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutdoorActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutletStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaidParkingOffPremises"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Park"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingFacility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingGarage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerformingArtsTheater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Period"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlaceOfWorship"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Playground"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PoliceStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pond"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PostOffice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Preschool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Private_Kitchen_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicSwimmingPool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RVPark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RadioStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatedLF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecommendCuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reservoir"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restaurant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReviewAndFeedback"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Riad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RiverBodyOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Russian_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#School"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SchoolDistrict"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeaBodyOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seafood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Season"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecuredParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShoeStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShoppingCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sichuan_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkiResort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ski_Resort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Snail_Rice_Noodles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Southeast_Asian_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaLoungeRelaxationArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Specialty_Dishes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpecificTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SportingGoodsStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SportsActivityLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SportsClub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StadiumOrArena"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Store"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StreetParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubwayStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Supermarket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Synagogue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TattooParlor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaxiStand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporaryArtGalleries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TennisComplex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TouristAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TouristDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TouristInformationCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TouristLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToyStore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrainStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TravelAgency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TreeHouseHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnderWaterHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegetarian_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Villa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Volcano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterPark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Waterfall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Western_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Winery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Xinjiang_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zoo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BBQ_&amp;_Skewers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bakery_&amp;_Desserts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dim_Sum_&amp;_Morning_Tea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fresh_Fruits_&amp;_Produce"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Health_&amp;_Nutritional_Foods"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Jiangsu_&amp;_Zhejiang_Cuisine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rice_Noodle_&amp;_Pasta_Shops"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Snacks_&amp;_Fast_Food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Airport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Bridge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Canal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Church"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Continent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Hospital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Lake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Mountain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Museum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Park"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Restaurant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:ShoppingMall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Stadium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbo:Theatre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#schema:TouristDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AccessibleParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Accommodation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AdditionalToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Aerobics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AirConditioning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AirportShuttle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AlarmClock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Apartment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Arabic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Archery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AtmOnSite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:AuditoryGuidance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BabyBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BabyMonitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BabySafetyGates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Babysitting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BabysittingChildServices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BackMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Backyard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BadmintonEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BakingSheet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Balance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Ballroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Barbecue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BarbecueUtensils"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BathOrShower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BathRobes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BathroomEmergencyCord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Bathtub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BeautySalon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BeautyService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BedLinen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BicycleRental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Bidet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BikeTours"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BikesAvailableFree"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Billiards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Bingo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Blender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BoardGamesPuzzles"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Boat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BodyScrub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BodySoap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BodyTreatments"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BodyWrap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BottleOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BreadMaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BridalSuite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:BusinessCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CampingPitch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Canoeing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CarRental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CarbonMonoxideDetector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Carpeted"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Casino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CctvInCommonAreas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CctvOutsideProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CdPlayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChangingTable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChapelShrine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CheckinService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CheckoutService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChildSafetySocketCovers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChildrenBooksAndToys"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChildrenSDinnerware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChildrenSHighChair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ChildrenTelevisionNetworks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Closet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ClosetAndDresser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ClothesRack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ClothingStorage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CoffeeMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ConciergeService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ConferenceRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CookingBasics-PotsAndPans"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CouplesMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Crib"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:CurrencyExchange"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DailyHousekeeping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Darts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DaySpa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DedicatedWorkspace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DesignatedSmokingArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Desk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DiningArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DiningTable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DisabledAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Disco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DishesAndSilverware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Dishwasher"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Diving"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DrycleaningService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Dryer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DryingRackForClothing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:DvdPlayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ElectricBlankets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ElectricKettle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ElectricStove"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ElectricVehicleChargingStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EnSuiteBathroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:English"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntireApartment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntireBoat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntireHouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntireLoft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntirePlace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EntireUnitLocatedOnGroundFloor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EthernetConnection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EvCharger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:EveningEntertainment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ExecutiveLoungeAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ExpressCheck-InCheck-Out"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FacialTreatments"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FamilyRooms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Fan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Fax"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FireExtinguishers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Fireplace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FireplaceGuards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FirstAidKit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Fishing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FitnessCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FitnessClasses"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Flat-ScreenTv"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FootBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FootMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FreeToiletries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Freezer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:French"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:FullBodyMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GameConsole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GameRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Garden"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GardenView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GasStove"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:German"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GiftShop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GolfCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Greek"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GroceryDeliveries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:GuestBathroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Gym"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HairCare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HairColouring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HairCut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HairStyling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HairTreatments"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Hairdryer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Hallway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HandMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Hanger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HappyHour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HeadMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HighChair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HigherLevelToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HorsebackRiding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HostGreetsYou"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HotWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HotelRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:House"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HouseKeeping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Hungarian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HygieneProducts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:HypoallergenicRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:In-roomBreakfast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:InnerCourtyardView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:InterconnectingRooms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:InternetFacilities"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:InvoiceProvided"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Ipad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:IpodDock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Iron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:IroningService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Italian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Karaoke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Kettle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:KeyAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:KeyCardAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Keypad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Kid-FriendlyBuffet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:KidMeals"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:KidsClub"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:KidsOutdoorPlayEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Kitchen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Kitchenette"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Kitchenware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LakeAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Lamp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LandmarkView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LaptopSafe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Laundry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Library"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Lift"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LightTherapy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LinenTowel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LiveMusic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LivePerformance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LiveSportsEventsBroadcast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LivingArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Lockbox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LockerRooms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Lockers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Loft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LongTermStaysAllowed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LoweredSink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:LuggageRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MakeUpServices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Manicure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Massage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MassageChair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MeetingBanquetFacilities"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MeetingRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Microwave"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MiniGolf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MosquitoNet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:MovieNights"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:NeckMassage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Newspapers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Non-SmokingRooms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Non-SmokingThroughout"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Oil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:On-SiteCoffeeHouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Open-AirBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:OutdoorDiningArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:OutdoorFireplace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:OutdoorFurniture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:OutdoorShower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:OutletCovers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Oven"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PackedLunches"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PaidParkingOffPremises"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PantsPress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ParkingFacility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ParkingGarage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Pay-Per-ViewChannels"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Pedicure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PersonalTrainer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PetBasket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PetBowls"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Photocopying"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Piano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PicnicArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Playground"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Polish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PoolBar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PoolBeachTowels"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PortableHeater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Portuguese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PrivateBathroom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PrivateCheck-InCheck-Out"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PrivateEntrance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PrivatePool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PubCrawls"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PublicToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:PublicTransportTickets"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Racquetball"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Radio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:RaisedToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ReadingLounge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Refrigerator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Restaurant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:RiceMaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Romanian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:RoofTerrace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Room"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Room-DarkeningShades"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:RoomService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Russian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Safe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SafetyDepositBox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SaltAndPepper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SatelliteTv"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Sauna"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SecuredParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SecurityAlarm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SelfCheck-In"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Shampoo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SharedKitchen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SharedRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SharedToilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ShowerBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ShowerGel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ShuttleService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SingleInductionHobInductionStove"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Sink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SittingArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Slippers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SmartLock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SmokeAlarms"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SmokingArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SnackBar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Soap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SoccerSquare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SocketNearTheBed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Sofa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Solarium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SoundSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SoundproofRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Soundproofing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SpaBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SpaLoungeRelaxationArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Spanish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Square"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Squash"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Stair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Stove"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Stovetop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:StreetParking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Strollers"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SuitPress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Suite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SunLounger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SunLoungersOrBeachChairs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SunUmbrellas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Supermarket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:SwimmingPool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TableCornerGuards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TableTennis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Tap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TeaCoffeeMaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TeaMaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Telephone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Television"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TemporaryArtGalleries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TennisEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TennisSquare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Terrace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ThemedDinnerNights"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ThemedDinners"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TicketService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TicketsToAttractionsOrShows"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Toaster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TobaccoShop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Toilet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ToiletPaper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:ToiletWithGrabRails"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TourDesk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TourOrClassAboutLocalCulture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Towel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TrashCompactor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TrouserPress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:TurkishBath"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:UpperFloorsAccessibleByElevator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:UpperFloorsAccessibleByStairsOnly"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:VendingMachineDrinks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:VendingMachineSnacks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Veranda"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:View"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Villa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:VipRoomFacilities"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:VisualAids"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Wake-UpService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Walk-InCloset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WalkingTours"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WashingMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WaterPark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WaxingServices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:Wi-FiZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WindowGuards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:WineGlasses"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:YogaClasses"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:24-HourFrontDesk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:24-HourSecurity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tao:dbo:Restaurant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ActivityassociatedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HoldOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#LocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#feature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecommendCuisine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReviewAndFeedback"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFeatureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#istheBestTimeFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#suitableForTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Content"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#EntryFee"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GeographicalScope"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OpeningHours"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#PopularityScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#PriceRange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Rating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Source"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#SpecialDish"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Timestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Beijing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#China"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Haidilao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HuangpuDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Museum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nanmenshuanrou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peking_University"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sanlitun"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shichahai"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spring"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpringFestival"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Summer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThePalaceMuseum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#nighttour"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://www.geonames.org/ontology#Class"/>
+        <Class IRI="http://www.geonames.org/ontology#Detail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.geonames.org/ontology#Code"/>
+        <Class IRI="http://www.geonames.org/ontology#Detail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+        <Class IRI="http://www.geonames.org/ontology#Detail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessibleParking"/>
+        <Class IRI="#ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdministrativeArea"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdministrativeArea"/>
+        <Class IRI="#TouristLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdultEntertainment"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#African_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airport"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AmusementPark"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Amusement_Park"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aparthotel"/>
+        <Class IRI="#Apartment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aparthotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Apartment"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aquarium"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtGallery"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bakery"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BarOrPub"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beach"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeautySalon"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BedAndBreakfast"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beijing_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Boat"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BoatTerminal"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BodyOfWater"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BookStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Botanical_Garden"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Botel"/>
+        <Class IRI="#Boat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BowlingAlley"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brewery"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bridge"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuddhistTemple"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Buffet"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bungalow"/>
+        <Class IRI="#House"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BunkerHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BusStation"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BusStop"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CafeOrCoffeeShop"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Campground"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Canal"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cantonese_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CapsuleHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Casino"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatholicChurch"/>
+        <Class IRI="#Church"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaveHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cemetery"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cemetery"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Church"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Church"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#AdministrativeArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CityCenter"/>
+        <Class IRI="#LandmarksOrHistoricalBuildings"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CityHall"/>
+        <Class IRI="#GovernmentBuilding"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CivicStructure"/>
+        <Class IRI="#TouristLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClothingStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coffee_Shop"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CollegeOrUniversity"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComedyClub"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Continent"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Continent"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConvenienceStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Country"/>
+        <Class IRI="#AdministrativeArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CountryHouseHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Courthouse"/>
+        <Class IRI="#GovernmentBuilding"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crayfish"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Creative_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crematorium"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturalActivity"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cultural_Street_Area"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DaySpa"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DefenceEstablishment"/>
+        <Class IRI="#GovernmentBuilding"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dentist"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepartmentStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Distillery"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drink_Shop"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DryCleaningOrLaundry"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EducationalOrganization"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectronicsStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElementarySchool"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Embassy"/>
+        <Class IRI="#GovernmentBuilding"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmergencyService"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntertainmentActivity"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EntertainmentBusiness"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventVenue"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExerciseGym"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FastFoodRestaurant"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FireStation"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FireStation"/>
+        <Class IRI="#EmergencyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Florist"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FoodEstablishment"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoInfo"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GolfCourse"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GolfCourse"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GovernmentBuilding"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GovernmentOffice"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grilled_Meat"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GroceryStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GuestHouse"/>
+        <Class IRI="#House"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HairSalon"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthClub"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthClub"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighRatedLF"/>
+        <Class IRI="#RatedLF"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighSchool"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HinduTemple"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HobbyShop"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HolidayHome"/>
+        <Class IRI="#House"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Home-style_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hospital"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hospital"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hospital"/>
+        <Class IRI="#EmergencyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hostal"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hostel"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotpot"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#House"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HouseBoat"/>
+        <Class IRI="#Boat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humanities_and_Historical_Sites"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hunan_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IceCreamShop"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IceHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Inn"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InternetCafe"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Japanese_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JewelryStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Korean_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LakeBodyOfWater"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LakeBodyOfWater"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Landform"/>
+        <Class IRI="#TouristLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LandmarksOrHistoricalBuildings"/>
+        <Class IRI="#TouristLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LegislativeBuilding"/>
+        <Class IRI="#GovernmentBuilding"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Library"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Library"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiquorStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalBusiness"/>
+        <Class IRI="#TouristLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LodgingFacility"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loft"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowRatedLF"/>
+        <Class IRI="#RatedLF"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumRatedLF"/>
+        <Class IRI="#RatedLF"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Memorial_Site"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MensClothingStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleSchool"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Middle_Eastern_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobilePhoneStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Modern_Architecture"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosque"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosque"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Motel"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mountain"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mountain"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MovieTheater"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MovieTheater"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Museum"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicVenue"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NailSalon"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Natural_Scenery"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NightClub"/>
+        <Class IRI="#EntertainmentBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Noodle_Shops"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Northeastern_Chinese_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OceanBodyOfWater"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OceanBodyOfWater"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OtherTypes"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Other_Cuisines"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutdoorActivity"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutletStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PaidParkingOffPremises"/>
+        <Class IRI="#ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Park"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParkingFacility"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParkingGarage"/>
+        <Class IRI="#ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pension"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerformingArtsTheater"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Period"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlaceOfWorship"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Playground"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PoliceStation"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PoliceStation"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PoliceStation"/>
+        <Class IRI="#EmergencyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pond"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pond"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PostOffice"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PostOffice"/>
+        <Class IRI="#GovernmentOffice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Preschool"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Private_Kitchen_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicSwimmingPool"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicToilet"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RVPark"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RadioStation"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatedLF"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecommendCuisine"/>
+        <Class IRI="#CateringIndustry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reservoir"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reservoir"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resort"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Restaurant"/>
+        <Class IRI="#CateringIndustry"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Riad"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RiverBodyOfWater"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Russian_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#School"/>
+        <Class IRI="#EducationalOrganization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SchoolDistrict"/>
+        <Class IRI="#AdministrativeArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeaBodyOfWater"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SeaBodyOfWater"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seafood"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Season"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecuredParking"/>
+        <Class IRI="#ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShoeStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShoppingCenter"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sichuan_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkiResort"/>
+        <Class IRI="#Resort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkiResort"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ski_Resort"/>
+        <Class IRI="#TouristAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snail_Rice_Noodles"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Southeast_Asian_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaLoungeRelaxationArea"/>
+        <Class IRI="#DaySpa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Specialty_Dishes"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpecificTime"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportingGoodsStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportsActivityLocation"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportsClub"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StadiumOrArena"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StadiumOrArena"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StadiumOrArena"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#State"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#State"/>
+        <Class IRI="#AdministrativeArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Store"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Store"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StreetParking"/>
+        <Class IRI="#ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubwayStation"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubwayStation"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Supermarket"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Synagogue"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TattooParlor"/>
+        <Class IRI="#HealthAndBeautyBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaxiStand"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporaryArtGalleries"/>
+        <Class IRI="#ArtGallery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TennisComplex"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TouristDestination"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TouristInformationCenter"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TouristLocation"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToyStore"/>
+        <Class IRI="#Store"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrainStation"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrainStation"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TravelAgency"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TreeHouseHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnderWaterHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegetarian_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Villa"/>
+        <Class IRI="#HolidayHome"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Villa"/>
+        <Class IRI="#House"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volcano"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Volcano"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterPark"/>
+        <Class IRI="#Park"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waterfall"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waterfall"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Western_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Winery"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Xinjiang_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoo"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BBQ_&amp;_Skewers"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bakery_&amp;_Desserts"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dim_Sum_&amp;_Morning_Tea"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fresh_Fruits_&amp;_Produce"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Health_&amp;_Nutritional_Foods"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Jiangsu_&amp;_Zhejiang_Cuisine"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rice_Noodle_&amp;_Pasta_Shops"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snacks_&amp;_Fast_Food"/>
+        <Class IRI="#Restaurant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Airport"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Bridge"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Canal"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Church"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Church"/>
+        <Class IRI="#PlaceOfWorship"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Continent"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Continent"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Country"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Country"/>
+        <Class IRI="#AdministrativeArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Hospital"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Hospital"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Hospital"/>
+        <Class IRI="#EmergencyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Hotel"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Hotel"/>
+        <Class IRI="#LodgingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Lake"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Lake"/>
+        <Class IRI="#BodyOfWater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Mountain"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Mountain"/>
+        <Class IRI="#Landform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Museum"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Museum"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Park"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Park"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Restaurant"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Restaurant"/>
+        <Class IRI="#FoodEstablishment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:ShoppingMall"/>
+        <Class IRI="#LocalBusiness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Stadium"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Stadium"/>
+        <Class IRI="#CivicStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Stadium"/>
+        <Class IRI="#SportsActivityLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbo:Theatre"/>
+        <Class IRI="#PerformingArtsTheater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#schema:TouristDestination"/>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AccessibleParking"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AccessibleParking"/>
+        <Class IRI="#tao:ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AdditionalToilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Aerobics"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AirConditioning"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AirportShuttle"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AlarmClock"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Apartment"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Arabic"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Archery"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AtmOnSite"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:AuditoryGuidance"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BabyBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BabyBath"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BabyMonitor"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BabySafetyGates"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Babysitting"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BabysittingChildServices"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BackMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BackMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Backyard"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BadmintonEquipment"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BakingSheet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BakingSheet"/>
+        <Class IRI="#tao:Kitchenware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Balance"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Balance"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Ballroom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Barbecue"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BarbecueUtensils"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathOrShower"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathOrShower"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathRobes"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathRobes"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathroomAmenity"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathroomEmergencyCord"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BathroomEmergencyCord"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Bathtub"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Bathtub"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BeautySalon"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BeautyService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BedLinen"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BicycleRental"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Bidet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Bidet"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BikeTours"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BikesAvailableFree"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Billiards"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Bingo"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Blender"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BoardGamesPuzzles"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Boat"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyScrub"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyScrub"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodySoap"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodySoap"/>
+        <Class IRI="#tao:Soap"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyTreatments"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyTreatments"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyWrap"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BodyWrap"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BottleOfWater"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BreadMaker"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BridalSuite"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:BusinessCenter"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CampingPitch"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Canoeing"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CarRental"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CarbonMonoxideDetector"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Carpeted"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Casino"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CctvInCommonAreas"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CctvOutsideProperty"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CdPlayer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChangingTable"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChapelShrine"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CheckinService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CheckoutService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChildSafetySocketCovers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChildrenBooksAndToys"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChildrenSDinnerware"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChildrenSHighChair"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ChildrenTelevisionNetworks"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Closet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Closet"/>
+        <Class IRI="#tao:ClothingStorage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ClosetAndDresser"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ClosetAndDresser"/>
+        <Class IRI="#tao:ClothingStorage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ClothesRack"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ClothingStorage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CoffeeMachine"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Computer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ConciergeService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ConferenceRoom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CookingBasics-PotsAndPans"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CookingBasics-PotsAndPans"/>
+        <Class IRI="#tao:Kitchenware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CouplesMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CouplesMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Crib"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:CurrencyExchange"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DailyHousekeeping"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DailyHousekeeping"/>
+        <Class IRI="#tao:HouseKeeping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Darts"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DaySpa"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DedicatedWorkspace"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DesignatedSmokingArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Desk"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DiningArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DiningTable"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DisabledAccess"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Disco"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DishesAndSilverware"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DishesAndSilverware"/>
+        <Class IRI="#tao:Kitchenware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Dishwasher"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Diving"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DrycleaningService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Dryer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Dryer"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DryingRackForClothing"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:DvdPlayer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricBlankets"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricKettle"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricKettle"/>
+        <Class IRI="#tao:Kettle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricStove"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricStove"/>
+        <Class IRI="#tao:Stove"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ElectricVehicleChargingStation"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EnSuiteBathroom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:English"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireApartment"/>
+        <Class IRI="#tao:Apartment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireBoat"/>
+        <Class IRI="#tao:EntirePlace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireHouse"/>
+        <Class IRI="#tao:EntirePlace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireHouse"/>
+        <Class IRI="#tao:House"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireLoft"/>
+        <Class IRI="#tao:EntirePlace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntirePlace"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EntireUnitLocatedOnGroundFloor"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EthernetConnection"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EvCharger"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:EveningEntertainment"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ExecutiveLoungeAccess"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ExpressCheck-InCheck-Out"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ExpressCheck-InCheck-Out"/>
+        <Class IRI="#tao:CheckinService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FacialTreatments"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FamilyRooms"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Fan"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Fax"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FireExtinguishers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Fireplace"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FireplaceGuards"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FirstAidKit"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Fishing"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FitnessCenter"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FitnessClasses"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Flat-ScreenTv"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Flat-ScreenTv"/>
+        <Class IRI="#tao:Television"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FootBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FootMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FootMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FreeToiletries"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FreeToiletries"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Freezer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:French"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FullBodyMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:FullBodyMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GameConsole"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GameRoom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Garden"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GardenView"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GardenView"/>
+        <Class IRI="#tao:View"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GasStove"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GasStove"/>
+        <Class IRI="#tao:Stove"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:German"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GiftShop"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GolfCourse"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Greek"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GroceryDeliveries"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:GuestBathroom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Gym"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairCare"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairColouring"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairColouring"/>
+        <Class IRI="#tao:HairCare"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairCut"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairCut"/>
+        <Class IRI="#tao:HairCare"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairStyling"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairStyling"/>
+        <Class IRI="#tao:HairCare"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairTreatments"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HairTreatments"/>
+        <Class IRI="#tao:HairCare"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Hairdryer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Hairdryer"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Hallway"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HandMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HandMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Hanger"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HappyHour"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HeadMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HeadMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HighChair"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HigherLevelToilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HigherLevelToilet"/>
+        <Class IRI="#tao:Toilet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HorsebackRiding"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HostGreetsYou"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HotWater"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HotWater"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HotelRoom"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HotelRoom"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:House"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HouseKeeping"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Hungarian"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HygieneProducts"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HygieneProducts"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:HypoallergenicRoom"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:In-roomBreakfast"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:InnerCourtyardView"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:InnerCourtyardView"/>
+        <Class IRI="#tao:View"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:InterconnectingRooms"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:InternetFacilities"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:InvoiceProvided"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Ipad"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:IpodDock"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Iron"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:IroningService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:IroningService"/>
+        <Class IRI="#tao:DrycleaningService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Italian"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Karaoke"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kettle"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:KeyAccess"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:KeyCardAccess"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Keypad"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kid-FriendlyBuffet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:KidMeals"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:KidsClub"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:KidsOutdoorPlayEquipment"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kitchen"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kitchenette"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kitchenette"/>
+        <Class IRI="#tao:Kitchen"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Kitchenware"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LakeAccess"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Lamp"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LandmarkView"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LandmarkView"/>
+        <Class IRI="#tao:View"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LaptopSafe"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LaptopSafe"/>
+        <Class IRI="#tao:Safe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Laundry"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Library"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Lift"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LightTherapy"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LightTherapy"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LinenTowel"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LinenTowel"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LiveMusic"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LivePerformance"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LiveSportsEventsBroadcast"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LivingArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Lockbox"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LockerRooms"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Lockers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Loft"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LongTermStaysAllowed"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LoweredSink"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LoweredSink"/>
+        <Class IRI="#tao:Sink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:LuggageRoom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MakeUpServices"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MakeUpServices"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Manicure"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Manicure"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Massage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MassageChair"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MassageChair"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MeetingBanquetFacilities"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MeetingRoom"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MeetingRoom"/>
+        <Class IRI="#tao:MeetingRoom"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MeetingRoom"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Microwave"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MiniGolf"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MiniGolf"/>
+        <Class IRI="#tao:Square"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MosquitoNet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:MovieNights"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:NeckMassage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:NeckMassage"/>
+        <Class IRI="#tao:Massage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Newspapers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Non-SmokingRooms"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Non-SmokingThroughout"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Oil"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:On-SiteCoffeeHouse"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Open-AirBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:OutdoorDiningArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:OutdoorFireplace"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:OutdoorFurniture"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:OutdoorShower"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:OutletCovers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Oven"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PackedLunches"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PaidParkingOffPremises"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PaidParkingOffPremises"/>
+        <Class IRI="#tao:ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PantsPress"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PantsPress"/>
+        <Class IRI="#tao:DrycleaningService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ParkingFacility"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ParkingGarage"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ParkingGarage"/>
+        <Class IRI="#tao:ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Pay-Per-ViewChannels"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Pay-Per-ViewChannels"/>
+        <Class IRI="#tao:Television"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Pedicure"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Pedicure"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PersonalTrainer"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PetBasket"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PetBowls"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Photocopying"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Piano"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PicnicArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Playground"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Polish"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PoolBar"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PoolBeachTowels"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PortableHeater"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Portuguese"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivateBathroom"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivateCheck-InCheck-Out"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivateCheck-InCheck-Out"/>
+        <Class IRI="#tao:CheckinService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivateEntrance"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivatePool"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PrivatePool"/>
+        <Class IRI="#tao:SwimmingPool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PubCrawls"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PublicToilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:PublicTransportTickets"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Racquetball"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Racquetball"/>
+        <Class IRI="#tao:Square"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Radio"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RaisedToilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RaisedToilet"/>
+        <Class IRI="#tao:Toilet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ReadingLounge"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Refrigerator"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Restaurant"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RiceMaker"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Romanian"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RoofTerrace"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RoofTerrace"/>
+        <Class IRI="#tao:Terrace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Room"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Room-DarkeningShades"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:RoomService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Russian"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Safe"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SafetyDepositBox"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SafetyDepositBox"/>
+        <Class IRI="#tao:Safe"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SaltAndPepper"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SatelliteTv"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SatelliteTv"/>
+        <Class IRI="#tao:Television"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Sauna"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SecuredParking"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SecuredParking"/>
+        <Class IRI="#tao:ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SecurityAlarm"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SelfCheck-In"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Shampoo"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Shampoo"/>
+        <Class IRI="#tao:Soap"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SharedKitchen"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SharedKitchen"/>
+        <Class IRI="#tao:Kitchen"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SharedRoom"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SharedToilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ShowerBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ShowerBath"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ShowerGel"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ShowerGel"/>
+        <Class IRI="#tao:Soap"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ShuttleService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SingleInductionHobInductionStove"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SingleInductionHobInductionStove"/>
+        <Class IRI="#tao:Stove"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Sink"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Sink"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SittingArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Slippers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SmartLock"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SmokeAlarms"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SmokingArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SnackBar"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Soap"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Soap"/>
+        <Class IRI="#tao:HygieneProducts"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SoccerSquare"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SoccerSquare"/>
+        <Class IRI="#tao:Square"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SocketNearTheBed"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Sofa"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Solarium"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SoundSystem"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SoundproofRoom"/>
+        <Class IRI="#tao:Room"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Soundproofing"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SpaBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SpaBath"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SpaLoungeRelaxationArea"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SpaLoungeRelaxationArea"/>
+        <Class IRI="#tao:DaySpa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Spanish"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Square"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Squash"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Squash"/>
+        <Class IRI="#tao:Square"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Stair"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Stove"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Stovetop"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Stovetop"/>
+        <Class IRI="#tao:Stove"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:StreetParking"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:StreetParking"/>
+        <Class IRI="#tao:ParkingFacility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Strollers"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SuitPress"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SuitPress"/>
+        <Class IRI="#tao:DrycleaningService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Suite"/>
+        <Class IRI="#tao:Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SunLounger"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SunLounger"/>
+        <Class IRI="#tao:SunLoungersOrBeachChairs"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SunLoungersOrBeachChairs"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SunUmbrellas"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Supermarket"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:SwimmingPool"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TableCornerGuards"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TableTennis"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Tap"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Tap"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TeaCoffeeMaker"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TeaMaker"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Telephone"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Television"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TemporaryArtGalleries"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TennisEquipment"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TennisSquare"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TennisSquare"/>
+        <Class IRI="#tao:Square"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Terrace"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ThemedDinnerNights"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ThemedDinners"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TicketService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TicketsToAttractionsOrShows"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TicketsToAttractionsOrShows"/>
+        <Class IRI="#tao:TicketService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Toaster"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TobaccoShop"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Toilet"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Toilet"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ToiletPaper"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ToiletPaper"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ToiletWithGrabRails"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:ToiletWithGrabRails"/>
+        <Class IRI="#tao:Toilet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TourDesk"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TourOrClassAboutLocalCulture"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Towel"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Towel"/>
+        <Class IRI="#tao:BathroomAmenity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TrashCompactor"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TrouserPress"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TrouserPress"/>
+        <Class IRI="#tao:DrycleaningService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:TurkishBath"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:UpperFloorsAccessibleByElevator"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:UpperFloorsAccessibleByStairsOnly"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:VendingMachineDrinks"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:VendingMachineSnacks"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Veranda"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:View"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Villa"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:VipRoomFacilities"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:VisualAids"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Wake-UpService"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Walk-InCloset"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Walk-InCloset"/>
+        <Class IRI="#tao:Closet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WalkingTours"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WashingMachine"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WaterPark"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WaxingServices"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WaxingServices"/>
+        <Class IRI="#tao:BeautyService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:Wi-FiZone"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WindowGuards"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WineGlasses"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:WineGlasses"/>
+        <Class IRI="#tao:Kitchenware"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:YogaClasses"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:24-HourFrontDesk"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:24-HourSecurity"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tao:dbo:Restaurant"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Beijing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#Haidilao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Restaurant"/>
+        <NamedIndividual IRI="#Nanmenshuanrou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TouristAttraction"/>
+        <NamedIndividual IRI="#Peking_University"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GeoInfo"/>
+        <NamedIndividual IRI="#Sanlitun"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Natural_Scenery"/>
+        <NamedIndividual IRI="#Shichahai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TouristAttraction"/>
+        <NamedIndividual IRI="#Shichahai"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#Spring"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SpecificTime"/>
+        <NamedIndividual IRI="#SpringFestival"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Season"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Museum"/>
+        <NamedIndividual IRI="#ThePalaceMuseum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OutdoorActivity"/>
+        <NamedIndividual IRI="#nighttour"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#Beijing"/>
+        <NamedIndividual IRI="#China"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#Haidilao"/>
+        <NamedIndividual IRI="#Sanlitun"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#suitableForTime"/>
+        <NamedIndividual IRI="#Haidilao"/>
+        <NamedIndividual IRI="#Spring"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#Nanmenshuanrou"/>
+        <NamedIndividual IRI="#Beijing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <NamedIndividual IRI="#Sanlitun"/>
+        <NamedIndividual IRI="#Beijing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#suitableForTime"/>
+        <NamedIndividual IRI="#nighttour"/>
+        <NamedIndividual IRI="#Summer"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HoldOn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#feature"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActivity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRecommendCuisine"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFeatureOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#istheBestTimeFor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#ActivityassociatedWith"/>
+        <ObjectProperty IRI="#hasActivity"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#has"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#feature"/>
+        <ObjectProperty IRI="#isFeatureOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasReviewAndFeedback"/>
+        <ObjectProperty IRI="#isAbout"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#istheBestTimeFor"/>
+        <ObjectProperty IRI="#suitableForTime"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#LocatedIn"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#belongsTo"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ActivityassociatedWith"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HoldOn"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <Class IRI="#GeoInfo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#feature"/>
+        <Class IRI="#tao:Accommodation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has"/>
+        <Class IRI="#GeoInfo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRecommendCuisine"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAbout"/>
+        <Class IRI="#ReviewAndFeedback"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFeatureOf"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#suitableForTime"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#suitableForTime"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ActivityassociatedWith"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ActivityassociatedWith"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HoldOn"/>
+        <Class IRI="#Time"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#LocatedIn"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#GeoInfo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#feature"/>
+        <Class IRI="#tao:AccommodationFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has"/>
+        <Class IRI="#tao:Accommodation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#ActivityAndExperience"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRecommendCuisine"/>
+        <Class IRI="#RecommendCuisine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAbout"/>
+        <Class IRI="#Restaurant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAbout"/>
+        <Class IRI="#TouristAttraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFeatureOf"/>
+        <Class IRI="#tao:Accommodation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#suitableForTime"/>
+        <Class IRI="#Time"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Content"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Description"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#EntryFee"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#GeographicalScope"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Name"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#OpeningHours"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#PopularityScore"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#PriceRange"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Rating"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Source"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#SpecialDish"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Timestamp"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Type"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Content"/>
+        <Class IRI="#ReviewAndFeedback"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Description"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#EntryFee"/>
+        <Class IRI="#TouristAttraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#GeographicalScope"/>
+        <ObjectUnionOf>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Name"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OpeningHours"/>
+        <ObjectUnionOf>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#PopularityScore"/>
+        <ObjectUnionOf>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#PriceRange"/>
+        <Class IRI="#Restaurant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Rating"/>
+        <ObjectUnionOf>
+            <Class IRI="#Restaurant"/>
+            <Class IRI="#TouristAttraction"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Source"/>
+        <Class IRI="#ReviewAndFeedback"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#SpecialDish"/>
+        <Class IRI="#Restaurant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Timestamp"/>
+        <Class IRI="#ReviewAndFeedback"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Type"/>
+        <Class IRI="#ReviewAndFeedback"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Content"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#EntryFee"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#GeographicalScope"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OpeningHours"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#PopularityScore"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#PriceRange"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Rating"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Source"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#SpecialDish"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Timestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Type"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S3</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#ActivityAndExperience"/>
+                <Variable IRI="/act"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#suitableForTime"/>
+                <Variable IRI="/act"/>
+                <Variable IRI="/time"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#ActivityassociatedWith"/>
+                <Variable IRI="/act"/>
+                <Variable IRI="/att"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#suitableForTime"/>
+                <Variable IRI="/att"/>
+                <Variable IRI="/time"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#TouristAttraction"/>
+                <Variable IRI="/a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#LocatedIn"/>
+                <Variable IRI="/r"/>
+                <Variable IRI="/c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#belongsTo"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/r"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#belongsTo"/>
+                <Variable IRI="/a"/>
+                <Variable IRI="/c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

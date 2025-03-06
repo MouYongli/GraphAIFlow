@@ -1,0 +1,733 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/tourism#"
+     xml:base="http://www.example.org/tourism"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/tourism.owl#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/tourism.owl#BestVisitAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#BestVisitAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#HoldOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#HoldOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#LocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#LocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:Accommodation"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#SuitableForTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#SuitableForTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#feature -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#feature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:Accommodation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:AccommodationFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#hasActivityAndExperience -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#hasActivityAndExperience">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#hasRecommendCuisine -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#hasRecommendCuisine">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#RecommendCuisine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#hasReviewAndFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/tourism.owl#hasReviewAndFeedback">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.example.org/tourism.owl#ReviewAndFeedback"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Content -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Content">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#District -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#District">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#EntryFee -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#EntryFee">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Latitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Longitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#OpeningHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#OpeningHours">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#PriceRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#PriceRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Rating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#SpecialDish -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#SpecialDish">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/tourism.owl#Timestamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/tourism.owl#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#CulturalActivity -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#EntertainmentActivity -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#EntertainmentActivity">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#OutdoorActivity -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#OutdoorActivity">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#Period -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#Period">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#Season -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#Season">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#SpecificTime -->
+
+    <owl:Class rdf:about="file:/D:/研究生/毕设/Protege-5.6.4-win/tourism.owl#SpecificTime">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#ActivityAndExperience -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#ActivityAndExperience"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#AdministrativeRegion -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#AdministrativeRegion"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#African_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#African_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Amusement_Park -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Amusement_Park">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Beijing_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Beijing_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Botanical_Garden -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Botanical_Garden">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Buffet -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Buffet">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Cantonese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Cantonese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Catering -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Catering"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#City -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#City">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#AdministrativeRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Coffee_Shop -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Coffee_Shop">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Crayfish -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Crayfish">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Creative_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Creative_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Cultural_Street_Area -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Cultural_Street_Area">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Drink_Shop -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Drink_Shop">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Grilled_Meat -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Grilled_Meat">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Home-style_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Home-style_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Hotpot -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Hotpot">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Humanities_and_Historical_Sites -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Humanities_and_Historical_Sites">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Hunan_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Hunan_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Japanese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Japanese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Korean_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Korean_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Memorial_Site -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Memorial_Site">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Middle_Eastern_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Middle_Eastern_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Modern_Architecture -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Modern_Architecture">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Museum -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Museum">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Natural_Scenery -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Natural_Scenery">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Noodle_Shops -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Noodle_Shops">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Northeastern_Chinese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Northeastern_Chinese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#OtherTypes -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#OtherTypes">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Other_Cuisines -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Other_Cuisines">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Private_Kitchen_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Private_Kitchen_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#RecommendCuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#RecommendCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Catering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Restaurant -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Catering"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#ReviewAndFeedback -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#ReviewAndFeedback"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Russian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Russian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Seafood -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Seafood">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Sichuan_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Sichuan_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Ski_Resort -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Ski_Resort">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Snail_Rice_Noodles -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Snail_Rice_Noodles">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Southeast_Asian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Southeast_Asian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Specialty_Dishes -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Specialty_Dishes">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Time -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Time"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#TouristAttraction -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#TouristAttraction"/>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Vegetarian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Vegetarian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Western_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Western_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Xinjiang_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Xinjiang_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#BBQ_&amp;_Skewers -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#BBQ_&amp;_Skewers">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Bakery_&amp;_Desserts -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Bakery_&amp;_Desserts">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Dim_Sum_&amp;_Morning_Tea -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Dim_Sum_&amp;_Morning_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Fresh_Fruits_&amp;_Produce -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Fresh_Fruits_&amp;_Produce">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Health_&amp;_Nutritional_Foods -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Health_&amp;_Nutritional_Foods">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Jiangsu_&amp;_Zhejiang_Cuisine -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Jiangsu_&amp;_Zhejiang_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Rice_Noodle_&amp;_Pasta_Shops -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Rice_Noodle_&amp;_Pasta_Shops">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/tourism.owl#Snacks_&amp;_Fast_Food -->
+
+    <owl:Class rdf:about="http://www.example.org/tourism.owl#Snacks_&amp;_Fast_Food">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/tourism.owl#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:Accommodation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:Accommodation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:AccommodationFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#tao:AccommodationFeature"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

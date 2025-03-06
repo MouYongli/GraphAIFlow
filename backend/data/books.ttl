@@ -1,0 +1,106 @@
+@prefix ex:   <http://example.org#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+###############################################################################
+# 定义类 (Classes)
+###############################################################################
+
+ex:Author   a rdfs:Class ;
+            rdfs:label "Author"@zh .
+
+ex:Book     a rdfs:Class ;
+            rdfs:label "Book"@zh .
+
+ex:Library  a rdfs:Class ;
+            rdfs:label "Library"@zh .
+
+ex:Publisher a rdfs:Class ;
+             rdfs:label "Publisher"@zh .
+
+ex:City     a rdfs:Class ;
+            rdfs:label "City"@zh .
+
+###############################################################################
+# 定义属性 (Properties)
+###############################################################################
+
+ex:hasName a rdf:Property ;
+    rdfs:label "has name"@en ;
+    rdfs:comment "用于表示某个实体的名称"@zh ;
+    rdfs:domain ex:Author , ex:Publisher , ex:City ;
+    rdfs:range  xsd:string .
+
+ex:hasWritten a rdf:Property ;
+    rdfs:label "has written"@en ;
+    rdfs:comment "作者所写的书"@zh ;
+    rdfs:domain ex:Author ;
+    rdfs:range  ex:Book .
+
+ex:publishedBy a rdf:Property ;
+    rdfs:label "published by"@en ;
+    rdfs:comment "书籍由哪家出版社出版"@zh ;
+    rdfs:domain ex:Book ;
+    rdfs:range  ex:Publisher .
+
+ex:ownedBy a rdf:Property ;
+    rdfs:label "owned by"@en ;
+    rdfs:comment "图书馆归哪个城市所有"@zh ;
+    rdfs:domain ex:Library ;
+    rdfs:range  ex:City .
+
+ex:locatedIn a rdf:Property ;
+    rdfs:label "located in"@en ;
+    rdfs:comment "出版社所在的城市"@zh ;
+    rdfs:domain ex:Publisher ;
+    rdfs:range  ex:City .
+
+###############################################################################
+# 定义个体 (Individuals) - 共 10 个主要节点
+###############################################################################
+
+# 1
+ex:author1 a ex:Author ;
+    ex:hasName "Alice" ;
+    ex:hasWritten ex:book1 ,
+                  ex:book3 .
+
+# 2
+ex:author2 a ex:Author ;
+    ex:hasName "Bob" ;
+    ex:hasWritten ex:book2 .
+
+# 3
+ex:author3 a ex:Author ;
+    ex:hasName "Carol" .
+
+# 4
+ex:book1 a ex:Book ;
+    ex:publishedBy ex:publisher1 .
+
+# 5
+ex:book2 a ex:Book ;
+    ex:publishedBy ex:publisher2 .
+
+# 6
+ex:book3 a ex:Book ;
+    ex:publishedBy ex:publisher1 .
+
+# 7
+ex:library a ex:Library ;
+    ex:ownedBy ex:city .
+
+# 8
+ex:publisher1 a ex:Publisher ;
+    ex:hasName "PubCorp" ;
+    ex:locatedIn ex:city .
+
+# 9
+ex:publisher2 a ex:Publisher ;
+    ex:hasName "GlobalPress" ;
+    ex:locatedIn ex:city .
+
+# 10
+ex:city a ex:City ;
+    ex:hasName "Metropolis" .
