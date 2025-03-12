@@ -1,19 +1,17 @@
 "use client";
 import React, { useState } from "react";
-import KnowledgeSidebar from "@/components/chat/ChatSidebar";
+import ChatSidebar from "@/components/chat/ChatSidebar"; // ✅ 确保路径正确
 
-export default function KnowledgeLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ChatLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
   return (
     <div className="flex min-h-screen">
-      <KnowledgeSidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      {/* 页面内容 */}
+      {/* 侧边栏组件 */}
+      <ChatSidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+
+      {/* 主内容 */}
       <main className="flex-1 p-4 bg-white text-gray-900">
         {children}
       </main>
