@@ -1,103 +1,107 @@
 "use client";
-import { useEffect, useRef } from "react";
-import * as d3 from "d3";
+
+import { useRef, useEffect, useState } from "react";
+import ForceGraph2D from "react-force-graph-2d";
+
+interface Node {
+  id: string;
+  label: string;
+  type: string;
+  x?: number;
+  y?: number;
+}
+
+interface Link {
+  source: string | Node;
+  target: string | Node;
+  label: string;
+}
+
+interface GraphData {
+  nodes: Node[];
+  edges: Link[];
+}
 
 interface OntologyGraphProps {
-  ontologyData: { nodes: any[]; edges: any[] };
+  ontologyData: GraphData;
 }
 
 export default function OntologyGraph({ ontologyData }: OntologyGraphProps) {
-  const graphRef = useRef<SVGSVGElement | null>(null);
+  const graphRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState<number>(800);
+  const [height, setHeight] = useState<number>(600);
 
+  // 监听窗口大小变化
   useEffect(() => {
-    if (!ontologyData.nodes.length) return;
+    const updateSize = () => {
+      if (graphRef.current) {
+        const { offsetWidth, offsetHeight } = graphRef.current;
+        setWidth(offsetWidth || 800);
+        setHeight(offsetHeight || 600);
+      }
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
-    const width = 800;  // ✅ 让宽度更适应屏幕
-    const height = 600; // ✅ 适当加大高度
-    const svg = d3.select(graphRef.current);
+  // 获取节点颜色
+  const getNodeColor = (node: Node): string => {
+    if (node.type === "class") return "#89CFF0"; // 浅蓝色
+    if (node.type === "external_class") return "#4169E1"; // 深蓝色
+    if (node.type === "property") return "#4CAF50"; // 绿色
+    if (node.type === "data_type") return "#FFD700"; // 黄色
+    return "#D3D3D3"; // 默认灰色
+  };
 
-    // ✅ 清空旧的 SVG，避免重复渲染
-    svg.selectAll("*").remove();
-
-    // ✅ 让 `g` 组跟随缩放
-    const g = svg.append("g");
-
-    // ✅ 添加 zoom 交互
-    const zoom = d3.zoom<SVGSVGElement, unknown>()
-      .scaleExtent([0.5, 2]) // 限制缩放
-      .on("zoom", (event) => {
-        g.attr("transform", event.transform.toString());
-      });
-
-    svg.call(zoom as unknown as any);
-
-    // ✅ 力导向图
-    const simulation = d3.forceSimulation(ontologyData.nodes)
-      .force("link", d3.forceLink(ontologyData.edges).id((d: any) => d.id).distance(100))
-      .force("charge", d3.forceManyBody().strength(-200))
-      .force("center", d3.forceCenter(width / 2, height / 2));
-
-    // ✅ 绘制连线
-    const link = g.selectAll("line")
-      .data(ontologyData.edges)
-      .enter().append("line")
-      .attr("stroke", "#999")
-      .attr("stroke-opacity", 0.6);
-
-    // ✅ 绘制节点
-    const node = g.selectAll("circle")
-      .data(ontologyData.nodes)
-      .enter().append("circle")
-      .attr("r", 8)
-      .attr("fill", (d: any) => d.type === "class" ? "blue" : "orange")
-      .call(d3.drag<SVGCircleElement, any>()
-        .on("start", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        })
-        .on("drag", (event, d) => {
-          d.fx = event.x;
-          d.fy = event.y;
-        })
-        .on("end", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        }));
-
-    // ✅ 添加文本标签
-    const text = g.selectAll("text")
-      .data(ontologyData.nodes)
-      .enter().append("text")
-      .attr("dx", 10)
-      .attr("dy", ".35em")
-      .text((d: any) => d.label)
-      .style("font-size", "12px");
-
-    // ✅ 更新力导向图
-    simulation.on("tick", () => {
-      link
-        .attr("x1", (d: any) => d.source.x)
-        .attr("y1", (d: any) => d.source.y)
-        .attr("x2", (d: any) => d.target.x)
-        .attr("y2", (d: any) => d.target.y);
-
-      node
-        .attr("cx", (d: any) => d.x)
-        .attr("cy", (d: any) => d.y);
-
-      text
-        .attr("x", (d: any) => d.x + 10)
-        .attr("y", (d: any) => d.y);
-    });
-
-  }, [ontologyData]);
+  // 获取边的样式（子类关系用虚线）
+  const getLinkStyle = (link: Link): number[] | null => {
+    return link.label === "Subclass of" ? [5, 5] : null;
+  };
 
   return (
-    <div className="w-full flex justify-center items-center bg-gray-100 p-4 rounded-lg overflow-hidden">
-      {/* ✅ 让 `svg` 自适应容器大小 */}
-      <svg ref={graphRef} className="w-full h-full border rounded-lg" viewBox="0 0 800 600" />
+    <div ref={graphRef} className="h-[600px] bg-white shadow-lg rounded-lg p-4">
+      <ForceGraph2D
+        width={width}
+        height={height}
+        graphData={{ nodes: ontologyData.nodes, links: ontologyData.edges }}
+        
+        // ✅ 调整力导向布局参数
+        d3Force="charge"
+        d3AlphaDecay={0.05} // 降低收敛速度，让图谱展开
+        d3VelocityDecay={0.2} // 增加节点之间的排斥力
+        nodeRelSize={8} // 节点大小
+        linkDistance={120} // ✅ 增加边的长度，让图谱更分散
+        linkStrength={0.5} // 边的弹性系数
+        cooldownTicks={100} // 增加冷却时间，让图谱慢慢展开
+        
+        nodeCanvasObject={(node: any, ctx, globalScale) => {
+          const label = node.label;
+          const fontSize = 12 / globalScale;
+          ctx.font = `${fontSize}px Sans-Serif`;
+          ctx.fillStyle = getNodeColor(node);
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, 8, 0, 2 * Math.PI, false);
+          ctx.fill();
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "black";
+          ctx.fillText(label, node.x, node.y - 12);
+        }}
+        linkCanvasObjectMode={() => "after"}
+        linkCanvasObject={(link: any, ctx) => {
+          const fontSize = 10;
+          ctx.font = `${fontSize}px Sans-Serif`;
+          ctx.fillStyle = "black";
+          const midX = (link.source.x + link.target.x) / 2;
+          const midY = (link.source.y + link.target.y) / 2;
+          ctx.fillText(link.label, midX, midY);
+        }}
+        linkDirectionalArrowLength={6}
+        linkDirectionalArrowRelPos={1}
+        linkLineDash={(link: any) => getLinkStyle(link)}
+        linkWidth={1}
+      />
     </div>
   );
 }

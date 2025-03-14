@@ -1,36 +1,53 @@
-# backend/app/utils/parser.py
 from rdflib import Graph, URIRef, Literal
+from rdflib.namespace import RDF, RDFS, OWL
+import os
 
 def extract_label(uri: str) -> str:
-    """
-    提取 URI 的最后部分作为 label
-    """
+    """提取 URI 的最后部分作为 label"""
     if "#" in uri:
         return uri.split("#")[-1]
     elif "/" in uri:
         return uri.split("/")[-1]
     return uri
 
-def parse_rdf_owl(file_path: str):
-    """
-    解析 RDF/OWL（TTL 格式）文件，返回图结构数据：
-      {
-         "nodes": [{ "id": string, "label": string, "type": string }, ...],
-         "edges": [{ "source": string, "target": string, "label": string, "type": string }, ...]
-      }
-    """
+def parse_rdf_owl(file_path: str, file_format: str = None):
+    """解析 RDF/OWL 文件，返回图结构数据"""
+    
+    # 打印接收到的文件路径
+    print(f"📂 收到解析请求: {file_path}")
+
+    if not os.path.exists(file_path):
+        print("❌ 文件不存在")
+        return None
+
+    # 根据文件后缀判断解析格式
+    if file_format is None:
+        if file_path.endswith(".ttl"):
+            file_format = "turtle"
+        elif file_path.endswith(".rdf") or file_path.endswith(".owl"):
+            file_format = "application/rdf+xml"
+        else:
+            print("❌ 不支持的文件格式")
+            return None
+    
+    print(f"📂 解析格式: {file_format}")
+
     g = Graph()
-    g.parse(file_path, format="turtle")  # 指定 TTL 格式解析
+
+    # 解析文件，增加异常捕获
+    try:
+        g.parse(file_path, format=file_format)
+        print("✅ RDF/OWL 解析成功！")
+    except Exception as e:
+        print(f"❌ 解析失败: {e}")
+        return None
 
     nodes = {}
     edges = []
 
-    RDFS_CLASS_URI = "http://www.w3.org/2000/01/rdf-schema#Class"
-    RDF_TYPE_URI = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-
-    # 第一遍：识别 rdf:type 为 rdfs:Class 的节点（标记为 class）
+    # 识别 rdf:type 为 rdfs:Class 或 owl:Class 的节点
     for s, p, o in g:
-        if p == URIRef(RDF_TYPE_URI) and str(o) == RDFS_CLASS_URI:
+        if p == RDF.type and (o == RDFS.Class or o == OWL.Class):
             nodes[str(s)] = {
                 "id": str(s),
                 "label": extract_label(str(s)),
@@ -42,6 +59,7 @@ def parse_rdf_owl(file_path: str):
         s_str = str(s)
         p_str = str(p)
         o_str = str(o)
+
         # 主语节点
         if s_str not in nodes:
             nodes[s_str] = {
@@ -49,7 +67,8 @@ def parse_rdf_owl(file_path: str):
                 "label": extract_label(s_str),
                 "type": "resource"
             }
-        # 宾语节点：如果为 Literal，则 type 为 literal；否则为 resource
+
+        # 宾语节点
         if isinstance(o, Literal):
             if o_str not in nodes:
                 nodes[o_str] = {
@@ -64,7 +83,8 @@ def parse_rdf_owl(file_path: str):
                     "label": extract_label(o_str),
                     "type": "resource"
                 }
-        # 构造边：所有三元组均生成边，边的 label 取 p 的简化名
+
+        # 生成边
         edge = {
             "source": s_str,
             "target": o_str,
@@ -73,7 +93,6 @@ def parse_rdf_owl(file_path: str):
         }
         edges.append(edge)
 
-    return {
-        "nodes": list(nodes.values()),
-        "edges": edges
-    }
+    print(f"📊 解析完成，节点数: {len(nodes)}, 关系数: {len(edges)}")  # 输出解析的节点和边数
+
+    return {"nodes": list(nodes.values()), "edges": edges}
