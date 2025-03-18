@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 interface FileListProps {
   onDelete: (filename: string) => void;
-  onParseFile: (filename: string) => void;  // ✅ 确保传递解析方法
+  onParseFile: (filename: string) => void;  // ✅ 传递解析方法
 }
 
 export default function FileList({ onDelete, onParseFile }: FileListProps) {
@@ -30,7 +30,7 @@ export default function FileList({ onDelete, onParseFile }: FileListProps) {
       ) : (
         files.map((file) => (
           <div key={file} className="flex justify-between p-2 border-b hover:bg-gray-100">
-            {/* 点击文件解析 */}
+            {/* ✅ 点击文件触发 onParseFile */}
             <span className="text-blue-600 cursor-pointer" onClick={() => onParseFile(file)}>
               {file}
             </span>

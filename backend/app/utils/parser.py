@@ -1,26 +1,25 @@
-from rdflib import Graph, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, OWL
+from rdflib import Graph, RDF, RDFS, OWL
 import os
+import json
 
-def extract_label(uri: str) -> str:
-    """提取 URI 的最后部分作为 label"""
-    if "#" in uri:
-        return uri.split("#")[-1]
-    elif "/" in uri:
-        return uri.split("/")[-1]
-    return uri
+def clean_uri(uri):
+    """清理 URI，去掉前缀，仅保留 ID"""
+    if uri.startswith("file:/"):
+        uri = uri.replace("file:/", "")  # 处理本地路径
+    elif uri.startswith("http://") or uri.startswith("https://"):
+        uri = uri.replace("http://", "").replace("https://", "")
+
+    return uri.split("#")[-1] if "#" in uri else uri.split("/")[-1]
 
 def parse_rdf_owl(file_path: str, file_format: str = None):
-    """解析 RDF/OWL 文件，返回图结构数据"""
-    
-    # 打印接收到的文件路径
-    print(f"📂 收到解析请求: {file_path}")
+    """解析 RDF/OWL 文件，返回本体层次结构数据"""
+    print(f"📂 正在解析: {file_path}")
 
     if not os.path.exists(file_path):
         print("❌ 文件不存在")
         return None
 
-    # 根据文件后缀判断解析格式
+    # 自动检测格式
     if file_format is None:
         if file_path.endswith(".ttl"):
             file_format = "turtle"
@@ -29,12 +28,8 @@ def parse_rdf_owl(file_path: str, file_format: str = None):
         else:
             print("❌ 不支持的文件格式")
             return None
-    
-    print(f"📂 解析格式: {file_format}")
 
     g = Graph()
-
-    # 解析文件，增加异常捕获
     try:
         g.parse(file_path, format=file_format)
         print("✅ RDF/OWL 解析成功！")
@@ -42,57 +37,109 @@ def parse_rdf_owl(file_path: str, file_format: str = None):
         print(f"❌ 解析失败: {e}")
         return None
 
-    nodes = {}
-    edges = []
+    # 存储本体结构
+    classes = set()
+    subclass_relations = {}
+    
 
-    # 识别 rdf:type 为 rdfs:Class 或 owl:Class 的节点
-    for s, p, o in g:
-        if p == RDF.type and (o == RDFS.Class or o == OWL.Class):
-            nodes[str(s)] = {
-                "id": str(s),
-                "label": extract_label(str(s)),
-                "type": "class"
-            }
+    # **解析所有类**
+    for s, p, o in g.triples((None, RDF.type, OWL.Class)):
+        class_name = clean_uri(str(s))
+        classes.add(class_name)
+    for s, p, o in g.triples((None, RDF.type, RDFS.Class)):  # 兼容 RDFS Class
+        classes.add(clean_uri(str(s)))
 
-    # 遍历所有三元组，构建节点和边
-    for s, p, o in g:
-        s_str = str(s)
-        p_str = str(p)
-        o_str = str(o)
+    # **解析类的层次结构**
+    links = []  # ✅ 存储 `subClassOf` 关系
+    for s, p, o in g.triples((None, RDFS.subClassOf, None)):
+        child = clean_uri(str(s))
+        parent = clean_uri(str(o))
 
-        # 主语节点
-        if s_str not in nodes:
-            nodes[s_str] = {
-                "id": s_str,
-                "label": extract_label(s_str),
-                "type": "resource"
-            }
+        if parent and child:
+            links.append({"source": child, "target": parent, "type": "subClassOf"})
 
-        # 宾语节点
-        if isinstance(o, Literal):
-            if o_str not in nodes:
-                nodes[o_str] = {
-                    "id": o_str,
-                    "label": o_str,
-                    "type": "literal"
-                }
-        else:
-            if o_str not in nodes:
-                nodes[o_str] = {
-                    "id": o_str,
-                    "label": extract_label(o_str),
-                    "type": "resource"
-                }
+    # **解析对象属性 (ObjectProperty) 关系**
+    object_properties = []
 
-        # 生成边
-        edge = {
-            "source": s_str,
-            "target": o_str,
-            "label": extract_label(p_str),
-            "type": "relation"
-        }
-        edges.append(edge)
+    for s, p, o in g.triples((None, RDF.type, OWL.ObjectProperty)):
+        prop_name = clean_uri(str(s))  # 属性名
 
-    print(f"📊 解析完成，节点数: {len(nodes)}, 关系数: {len(edges)}")  # 输出解析的节点和边数
+        # 获取所有 domain 和 range
+        domains = set(g.objects(s, RDFS.domain))  # 可能有多个 domain
+        ranges = set(g.objects(s, RDFS.range))  # 可能有多个 range
 
-    return {"nodes": list(nodes.values()), "edges": edges}
+        # 遍历所有 domain 和 range 组合
+        for domain in domains:
+            for range_ in ranges:
+                object_properties.append({
+                    "name": prop_name,
+                    "source": clean_uri(str(domain)),
+                    "target": clean_uri(str(range_))
+                })
+
+    for s, p, o in g.triples((None, RDF.type, RDF.Property)):
+        prop_name = clean_uri(str(s))
+        domains = set(g.objects(s, RDFS.domain))
+        ranges = set(g.objects(s, RDFS.range))
+
+        if not domains:  # ✅ 处理 domain 为空的情况
+            domains = {"UnknownDomain"}
+        if not ranges:  # ✅ 处理 range 为空的情况
+            ranges = {"UnknownRange"}
+
+        for domain in domains:
+            for range_ in ranges:
+                object_properties.append({
+                    "name": prop_name,
+                    "source": clean_uri(str(domain)),
+                    "target": clean_uri(str(range_))
+                })
+
+    print(f"🔎 解析到 {len(object_properties)} 个 ObjectProperty 关系")
+
+    # **解析数据属性**
+    data_properties = set()
+    for s, p, o in g.triples((None, RDF.type, OWL.DatatypeProperty)):
+        data_properties.add(clean_uri(str(s)))
+
+
+    # **构建 Ontology JSON**
+    ontology_data = {
+        "nodes": [{"id": cls, "name": cls, "type": "Class"} for cls in classes],
+        "links": links,
+        "object_properties": object_properties,
+        "data_properties": list(data_properties),
+        "classes": list(classes),  # ✅ 确保 classes 被返回
+    }
+
+
+    # **确保所有 links 里的 source 和 target 都在 nodes 里**
+    all_nodes = set(classes)
+    for link in links + object_properties:
+        all_nodes.add(link["source"])
+        all_nodes.add(link["target"])
+
+    # 只有 `ontology_data` 存在时，才 append
+    if "nodes" in ontology_data:
+        for node_id in all_nodes:
+            if node_id not in classes:
+                ontology_data["nodes"].append({"id": node_id, "name": node_id, "type": "Unknown"})
+
+
+    # **如果 "Thing" 作为根节点缺失，则补充**
+    if "Thing" not in all_nodes:
+        ontology_data["nodes"].append({"id": "Thing", "name": "Thing", "type": "Class"})
+
+    print("\n=== 🔗 解析出的 links ===")
+    for link in links:
+        print(f"{link['source']} --{link['type']}--> {link['target']}")
+
+
+    print(f"📊 解析完成: 类别 {len(classes)}, 关系 {len(links)}, 对象属性 {len(object_properties)}, 数据属性 {len(data_properties)}")
+    print(json.dumps(ontology_data, indent=2, ensure_ascii=False))
+    node_ids = {node["id"] for node in ontology_data["nodes"]}
+    print("🔍 解析出的 Classes:", ontology_data["nodes"])
+    print("🔍 解析出的 Object Properties:", ontology_data["object_properties"])
+
+
+    return ontology_data
