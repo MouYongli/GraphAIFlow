@@ -12,9 +12,6 @@ interface OntologyEditorProps {
 }
 
 
-
-
-
 export default function OntologyEditor({ ontologyData }: OntologyEditorProps) {
   if (!ontologyData) {
     console.error("❌ `ontologyData` 为空，检查数据传递！");

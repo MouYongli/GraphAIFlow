@@ -6,7 +6,7 @@ import OntologyGraph from "@/components/knowledge/ontology/OntologyGraph";
 import OntologyEditor from "@/components/knowledge/ontology/OntologyEditor";
 import { OntologyNode } from "@/components/knowledge/ontology/OntologyTree";
 
-// ✅ 统一使用 OntologyNode，不再用 ExtendedOntologyNode
+//  统一使用 OntologyNode，不再用 ExtendedOntologyNode
 interface OntologyLink {
   source: string;
   target: string;
@@ -29,11 +29,11 @@ interface ParsedOntologyData {
 
 export default function OntologyPage() {
   const [ontologyData, setOntologyData] = useState({
-    nodes: [] as ExtendedOntologyNode[], // ✅ 修正这里
+    nodes: [] as ExtendedOntologyNode[], //  修正这里
     links: [] as OntologyLink[],
-    classes: [] as ExtendedOntologyNode[], // ✅ 确保 `classes` 也匹配
+    classes: [] as ExtendedOntologyNode[], //  确保 `classes` 也匹配
     object_properties: [] as ObjectProperty[],
-    data_properties: [] as ExtendedOntologyNode[], // ✅ 确保 `data_properties` 也匹配
+    data_properties: [] as ExtendedOntologyNode[], //  确保 `data_properties` 也匹配
   });
 
   const calculatePositions = (nodes: ExtendedOntologyNode[] = [], links: OntologyLink[] = []) => {
@@ -45,28 +45,40 @@ export default function OntologyPage() {
     const nodeMap = new Map<string, ExtendedOntologyNode>();
     nodes.forEach((node) => {
       nodeMap.set(node.id, node);
-      node.depth = 0;
+      node.depth = 0; // 默认都设为 0，避免未赋值
     });
   
+    //  计算层次结构
     const setDepth = (nodeId: string, depth: number) => {
       if (!nodeMap.has(nodeId)) return;
       const node = nodeMap.get(nodeId)!;
       node.depth = Math.max(node.depth ?? 0, depth);
+  
+      // 让所有 `subClassOf` 关系的子类递增 depth
       links
         .filter((link) => link.type === "subClassOf" && link.target === nodeId)
         .forEach((link) => setDepth(link.source, depth + 1));
     };
   
-    setDepth("tourism.owl", 0);
+    //  1️⃣ 找出所有**顶层类**（即：没有 `subClassOf` 的父类）
+    const topLevelClasses = nodes.filter(
+      (node) => !links.some((link) => link.source === node.id && link.type === "subClassOf")
+    );
   
-    // ✅ **防止节点漂移到外部**
+    //  2️⃣ 让所有顶层类成为“根节点”
+    topLevelClasses.forEach((cls) => setDepth(cls.id, 0));
+  
+    //  3️⃣ 确保 Graph 里的 `depth` 影响位置（按层级排列）
     nodes.forEach((node, index) => {
-      node.x = (node.depth || 0) * 200 + (Math.random() * 100 - 50); // 控制 x 轴位置
-      node.y = index * 40 - 300; // 让节点在 y 轴上均匀分布，防止漂移
-    });
+      node.x = (node.depth || 0) * 400 + (Math.random() * 150 - 75); 
+      node.y = (node.depth ?? 0) * 250 + (Math.random() * 150 - 75);
+      });
+    
+    
   
     return nodes;
   };
+  
 
   const handleParseFile = async (filename: string) => {
     try {
@@ -82,7 +94,7 @@ export default function OntologyPage() {
   
       const graph = data.graph;
   
-      // ✅ **修正 `nodes` 类型**
+      //  **修正 `nodes` 类型**
       const nodes = (graph.nodes || []).map((node: any, index: number) => ({
         id: node.id || `node_${index}`,
         name: node.name || `Unnamed_${index}`,
@@ -92,7 +104,7 @@ export default function OntologyPage() {
         y: Math.floor(index / 10) * 80 - 400,
       }));
   
-      // ✅ **修正 `links` 类型**
+      //  **修正 `links` 类型**
       const nodeIds = new Set(nodes.map((n: any) => n.id));
       const missingNodes = new Set<string>();
 
@@ -101,7 +113,7 @@ export default function OntologyPage() {
         if (!nodeIds.has(link.target)) missingNodes.add(link.target);
       });
   
-      // ✅ **自动补充 Root 节点**
+      //  **自动补充 Root 节点**
       const extraNodes = Array.from(missingNodes).map((id: string, index: number) => ({
         id,
         name: id,
@@ -118,14 +130,14 @@ export default function OntologyPage() {
         finalNodes.some((node: any) => node.id === link.target)
       );
   
-      // ✅ 把 ObjectProperty 也转换成 links
+      //  把 ObjectProperty 也转换成 links
       const objectPropertyLinks = (graph.object_properties || []).map((prop: any) => ({
         source: prop.source,
         target: prop.target,
         type: prop.name || "ObjectProperty"
       }));
 
-      // ✅ 合并 subClassOf 和 ObjectProperty 关系
+      //  合并 subClassOf 和 ObjectProperty 关系
       const links = [...(graph.links || []), ...objectPropertyLinks];
 
 
@@ -185,17 +197,20 @@ export default function OntologyPage() {
       
         attachChildren(thingNode); // 🏗 递归构建完整的层级结构
       
-        return [thingNode]; // ✅ 以 `Thing` 作为顶级，完整返回
+        return [thingNode]; //  以 `Thing` 作为顶级，完整返回
       }      
           
 
+      const processedNodes = calculatePositions(finalNodes, links); //  计算 depth
+
       setOntologyData({
-        nodes: finalNodes,
+        nodes: processedNodes, //  这里的 nodes 现在有正确的 depth
         links,
-        classes: buildClassHierarchy(finalNodes.filter(node => node.type === "Class"), links),
+        classes: buildClassHierarchy(processedNodes.filter(node => node.type === "Class"), links),
         object_properties: graph.object_properties || [],
         data_properties: graph.data_properties || [],
-      })
+      });
+
 
       console.log("🔍 解析出的层级 Classes:", ontologyData.classes);
 
@@ -203,8 +218,6 @@ export default function OntologyPage() {
       console.error("解析文件失败:", error);
     }
   };  
-  
-  
   
   
   
