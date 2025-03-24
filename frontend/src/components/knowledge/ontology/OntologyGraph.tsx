@@ -23,6 +23,7 @@ interface OntologyGraphProps {
 const linkColor = (link: OntologyLink) => {
   if (link.type === "subClassOf") return "#0000FF";  // 蓝色
   if (link.type === "ObjectProperty") return "#008000";  // 绿色
+  if (link.type === "DataProperty") return "#FF8C00"; 
   return "#333333";  // 深灰，确保在白色背景可见
 };
 
@@ -45,14 +46,25 @@ export default function OntologyGraph({ ontologyData }: OntologyGraphProps) {
     return null;
   }
   const graphRef = useRef<any>(null);
-  const processedNodes = ontologyData.nodes.map((node: ExtendedOntologyNode, index: number) => ({
+  // Step 1: 先找出所有被连接到的节点 id
+  const linkedNodeIds = new Set<string>();
+  ontologyData.links.forEach((link) => {
+    linkedNodeIds.add(link.source.toString());
+    linkedNodeIds.add(link.target.toString());
+  });
+
+  // Step 2: 过滤 nodes，保留“有连接”的节点
+  const filteredNodes = ontologyData.nodes.filter((node) => linkedNodeIds.has(node.id));
+
+  // Step 3: 为每个 node 加上坐标
+  const processedNodes = filteredNodes.map((node: ExtendedOntologyNode) => ({
     ...node,
     x: node.x ?? Math.random() * 800,
     y: node.y ?? Math.random() * 600,
   }));
-
   const processedData = { nodes: processedNodes, links: ontologyData.links };
-  
+
+
   useEffect(() => {
     if (graphRef.current) {
         graphRef.current.d3Force("link", d3.forceLink()
@@ -75,39 +87,53 @@ export default function OntologyGraph({ ontologyData }: OntologyGraphProps) {
       enableNodeDrag={true}
       d3VelocityDecay={0.3}
 
+      // ✅ 替换 nodeCanvasObject 中的内容：
       nodeCanvasObject={(node, ctx, globalScale) => {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-    
-        const maxRadius = 25; 
-        const minRadius = 10; 
-        const padding = 5; 
-    
-        // ✅ 1️⃣ 限制字符长度，超长自动省略
-        // 1️⃣ 定义字符串类型
+
+        const maxRadius = 25;
+        const minRadius = 10;
+        const padding = 5;
+
         const truncateText = (text: string, maxLength = 12): string => {
           return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
         };
 
-        // 2️⃣ 让 displayName 成为字符串
         const displayName: string = truncateText(node.name ?? "", 10);
+        const textWidth = ctx.measureText(displayName).width;
 
-        const textWidth = ctx.measureText(displayName).width; 
-        const radius = Math.min(Math.max(textWidth / 2 + padding, minRadius), maxRadius);
-    
-        // **绘制圆圈**
-        ctx.beginPath();
-        ctx.arc(node.x ?? 0, node.y ?? 0, radius, 0, 2 * Math.PI, false);
-        ctx.fillStyle = nodeColor(node);
-        ctx.fill();
-        ctx.strokeStyle = "black"; 
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    
-        // **绘制文字**
-        ctx.fillStyle = "white"; 
-        ctx.fillText(displayName, node.x ?? 0, node.y ?? 0);
-    }}
+        // ✅ 判断是否是 range 节点（简单判断类型为 string/float/int/datetime 等）
+        const isRangeNode = ["string", "float", "int", "boolean", "datetime", "datetimestamp"].includes((node.name || "").toLowerCase());
+
+        if (isRangeNode) {
+          // ✅ 长方形节点
+          const rectWidth = textWidth + padding * 2;
+          const rectHeight = 20;
+
+          ctx.fillStyle = "#FFD700"; // 金黄色
+          ctx.fillRect((node.x ?? 0) - rectWidth / 2, (node.y ?? 0) - rectHeight / 2, rectWidth, rectHeight);
+          ctx.strokeStyle = "black";
+          ctx.strokeRect((node.x ?? 0) - rectWidth / 2, (node.y ?? 0) - rectHeight / 2, rectWidth, rectHeight);
+
+          ctx.fillStyle = "black";
+          ctx.fillText(displayName, node.x ?? 0, node.y ?? 0);
+        } else {
+          // ✅ 普通圆形节点（不变）
+          const radius = Math.min(Math.max(textWidth / 2 + padding, minRadius), maxRadius);
+          ctx.beginPath();
+          ctx.arc(node.x ?? 0, node.y ?? 0, radius, 0, 2 * Math.PI, false);
+          ctx.fillStyle = nodeColor(node);
+          ctx.fill();
+          ctx.strokeStyle = "black";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.fillStyle = "white";
+          ctx.fillText(displayName, node.x ?? 0, node.y ?? 0);
+        }
+      }}
+
     
 
       
@@ -120,9 +146,6 @@ export default function OntologyGraph({ ontologyData }: OntologyGraphProps) {
             console.warn("⚠️ 无法找到节点:", link);
             return;
         }
-    
-        // **调试 link.type**
-        console.log("🟢 进入绘制逻辑: link.type =", `"${link.type}"`);
     
         // **设置线条样式**
         ctx.globalAlpha = 1; 
@@ -144,9 +167,9 @@ export default function OntologyGraph({ ontologyData }: OntologyGraphProps) {
     
         // **只隐藏 "subClassOf"，显示其他所有关系名称**
         if (link.type !== "subClassOf") {  
-            console.log("📝 绘制标签:", link.type);
-    
-            const labelText = link.type;  // **直接使用 link.type 作为标签**
+        
+          const labelText = link.label || link.type;
+          // **直接使用 link.type 作为标签**
             const midX = (sourceNode.x + targetNode.x) / 2;
             const midY = (sourceNode.y + targetNode.y) / 2;
     

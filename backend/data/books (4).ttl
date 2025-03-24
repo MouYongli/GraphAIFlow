@@ -20,9 +20,11 @@ ex:Publisher a rdfs:Class ;
     rdfs:label "Publisher"@zh .
 
 <http://example.com/has> a owl:ObjectProperty ;
-    rdfs:domain <http://example.com/City> .
+    rdfs:domain <http://example.com/City> ;
+    rdfs:range <http://example.com/subclasses> .
 
 <http://example.com/hasdata> a owl:DatatypeProperty ;
+    rdfs:domain <http://example.com/subclasses> ;
     rdfs:range <http://example.com/float>,
         <http://example.com/string> .
 
@@ -85,6 +87,9 @@ ex:book3 a ex:Book ;
 ex:publisher2 a ex:Publisher ;
     ex:hasName "GlobalPress" ;
     ex:locatedIn ex:city .
+
+<http://example.com/subclasses> a owl:Class ;
+    rdfs:subClassOf <http://example.com/Author> .
 
 ex:publisher1 a ex:Publisher ;
     ex:hasName "PubCorp" ;
