@@ -2,8 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import file_manager
-from app.routers import ontology
+from app.routers import file_manager, ontology, terminology_upload
 
 app = FastAPI(
     title="Owl/RDF/TTL Manager",
@@ -23,6 +22,8 @@ app.add_middleware(
 # 注册文件管理路由
 app.include_router(file_manager.router, prefix="/api/files", tags=["files"])
 app.include_router(ontology.router, prefix="/api/ontology", tags=["ontology"])
+#添加 api/terminology 前缀
+app.include_router(terminology_upload.router, prefix="/api/terminology")
 
 # 启动服务：可以通过 `python app/main.py` 或 `uvicorn app.main:app --reload` 运行
 if __name__ == "__main__":

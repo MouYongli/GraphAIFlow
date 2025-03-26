@@ -28,16 +28,15 @@ const Sidebar: React.FC = () => {
       label: "Ontology",
       children: [
         { key: "overview", label: "Overview", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology"),},
-        { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),},
-        { key: "entities", label: "Entities", icon: <Link2 /> },
-        { key: "relations", label: "Relations", icon: <Network /> },
-      ],
+        { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),}
+        ],
     },
     {
       key: "graphs",
       icon: <MessageOutlined />,
       label: "Knowledge Graphs",
       children: [
+        { key: "terminology", label: "Terminology Expansion", onClick: () => router.push("/knowledge/graph"),},
         { key: "general", label: "General" },
         { key: "processing", label: "Processing" },
         { key: "result", label: "Visualization" },
