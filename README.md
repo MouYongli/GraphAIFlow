@@ -1,4 +1,4 @@
-# GraphAIFlow
+# TourRec
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -26,7 +26,7 @@
 <!-- [![Discord](https://img.shields.io/discord/YOUR_DISCORD_SERVER_ID?label=Discord&logo=discord&color=5865F2)](https://discord.gg/YOUR_INVITE_LINK) -->
 <!-- [![Twitter](https://img.shields.io/twitter/follow/YOUR_TWITTER_HANDLE?style=social)](https://twitter.com/YOUR_TWITTER_HANDLE) -->
 
-This is the official repo for "Knowledge Graph-based AI workflow Chat Application" by DBIS at RWTH Aachen University ([Yongli Mou*](mou@dbis.rwth-aachen.de) and Stefan Decker)
+This is official repo for "Knowledge Graph-based Tourism Recommendation System" by DBIS at RWTH Aachen University ([Yongli Mou*](mou@dbis.rwth-aachen.de), Ziyi Xu and Stefan Decker)
 
 ## Overview
 
