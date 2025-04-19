@@ -1,11 +1,19 @@
-import React from "react";
+import React, { KeyboardEvent } from "react";
 
 interface InputProps {
   value: string;
   onChange: (value: string) => void;
+  onSend?: () => void;  // ✅ 新增回车发送回调
 }
 
-const Input: React.FC<InputProps> = ({ value, onChange }) => {
+const Input: React.FC<InputProps> = ({ value, onChange, onSend }) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      onSend?.(); // 调用发送方法
+    }
+  };
+
   return (
     <input
       type="text"
@@ -13,6 +21,7 @@ const Input: React.FC<InputProps> = ({ value, onChange }) => {
       placeholder="Enter your message..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
+      onKeyDown={handleKeyDown} // ✅ 回车事件绑定
     />
   );
 };

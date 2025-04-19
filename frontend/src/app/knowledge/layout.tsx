@@ -11,7 +11,7 @@ export default function KnowledgeLayout({
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen w-screen overflow-hidden">
       <KnowledgeSidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {/* 页面内容 */}
       <main className="flex-1 p-4 bg-white text-gray-900">

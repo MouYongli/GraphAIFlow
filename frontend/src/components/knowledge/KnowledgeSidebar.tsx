@@ -23,12 +23,13 @@ const Sidebar: React.FC = () => {
   // 侧边栏菜单项
   const items: MenuProps["items"] = [
     {
-      key: "ontology",
+      key: "overview",
       icon: <BulbOutlined />,
-      label: "Ontology",
+      label: "Overview",
       children: [
-        { key: "overview", label: "Overview", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology"),},
-        { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),}
+        { key: "ontology", label: "Ontology", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology"),},
+        { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),},
+        { key: "KG", label: "KG", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology/KG"),}
         ],
     },
     {
@@ -36,22 +37,37 @@ const Sidebar: React.FC = () => {
       icon: <MessageOutlined />,
       label: "Knowledge Graphs",
       children: [
-        { key: "terminology", label: "Terminology Expansion", onClick: () => router.push("/knowledge/graph"),},
-        { key: "general", label: "General" },
-        { key: "processing", label: "Processing" },
-        { key: "result", label: "Visualization" },
+        {
+          key: "terminology",
+          label: (
+            <span title="Terminology & Ontology Update">
+              Terminology & Ontology Update
+            </span>
+          ),
+          onClick: () => router.push("/knowledge/graph"),
+        },
+        
+        {
+          key: "processing",
+          label: "KG Construction",                
+          onClick: () => router.push("/knowledge/graph/KGConstruction"),
+        },
+        {
+          key: "general",
+          label: "Processing",                 
+          onClick: () => router.push("/knowledge/graph/Processing"), 
+        },
       ],
     },
     {
       key: "rec",
       icon: <MessageOutlined />,
       label: "Recommendation System",
+      children: [
+        { key: "pipeline", label: "pipeline" , onClick: () => router.push("/knowledge/recommendationSystem"), },
+      ],
     },
-    {
-      key: "db",
-      icon: <MessageOutlined />,
-      label: "Database",
-    },
+  
   ];
 
   return (
@@ -72,7 +88,7 @@ const Sidebar: React.FC = () => {
         defaultSelectedKeys={["ontology"]}
         defaultOpenKeys={["knowledge"]}
         items={items}
-        className="flex-1"
+        className="flex-1 overflow-y-auto"
       />
     </div>
   );

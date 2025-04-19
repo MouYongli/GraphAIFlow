@@ -8,7 +8,7 @@ interface CandidateProps {
 
 const Candidate: React.FC<CandidateProps> = ({ terms }) => {
   return (
-    <div className="mt-6 border border-red-400 rounded p-4 min-h-[450px]">
+    <div className="max-h-[200px] border border-red-400 rounded p-4 overflow-y-auto bg-gray-50">
       <h3 className="text-lg font-semibold mb-2">术语推荐结果</h3>
       {terms.length === 0 ? (
         <p className="text-gray-500">暂无术语，请点击文件或按钮提取。</p>
@@ -22,5 +22,6 @@ const Candidate: React.FC<CandidateProps> = ({ terms }) => {
     </div>
   );
 };
+
 
 export default Candidate;
