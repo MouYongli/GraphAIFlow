@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
     {
       key: "overview",
       icon: <BulbOutlined />,
-      label: "Overview",
+      label: "Visualization",
       children: [
         { key: "ontology", label: "Ontology", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology"),},
         { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),},
