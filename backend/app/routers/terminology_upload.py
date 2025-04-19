@@ -58,7 +58,7 @@ def get_columns(filename: str):
 
 @router.get("/extract")
 def extract_terms_route(filename: str):
-    file_path = os.path.join(UPLOAD_DIR, filename)  # ✅ 改为上传目录
+    file_path = os.path.join(UPLOAD_DIR, filename)  #改为上传目录
     try:
         terms = terminology_extractor.extract_terms(file_path)
         return {"candidates": terms}
