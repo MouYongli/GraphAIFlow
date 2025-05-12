@@ -10,6 +10,7 @@ import OntologyGraph from "@/components/knowledge/ontology/OntologyGraph";
 import { ExtendedOntologyNode } from "@/components/knowledge/ontology/OntologyTree";
 import { OntologyNode } from "@/components/knowledge/ontology/OntologyTree";
 import type { ObjectProperty, DataProperty } from "@/components/knowledge/ontology/OntologyEditor";
+import { useTranslation } from "react-i18next"; 
 
 interface Suggestion {
   term: string;
@@ -28,7 +29,7 @@ interface OntologyLink {
 export default function TerminologyPage() {
   const [terms, setTerms] = useState<string[]>([]);
   const [ontologyStructure, setOntologyStructure] = useState<string>("");
-
+  const { t } = useTranslation("common");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [existingClasses, setExistingClasses] = useState<string[]>([]);
   const [existingProperties, setExistingProperties] = useState<string[]>([]);

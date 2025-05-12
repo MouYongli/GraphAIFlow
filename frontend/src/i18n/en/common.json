@@ -1,29 +1,185 @@
 {
-    "home": {
-        "title": "TourRec",
-        "subtitle": "A recommendation system for personalized travel itineraries",
-        "try_now": "Try Now"
+  "home": {
+    "welcome": "Welcome to TouRec",
+    "slogan": "Your Intelligent Tourism Information Searching Helper",
+    "chat_button": "Chat With Me",
+    "section_1": "Attraction Connections",
+    "section_1_desc": "Discover how different attractions are linked",
+    "section_2": "Smart Recommendations",
+    "section_2_desc": "Get the best travel time suggestions",
+    "section_3": "User Feedback",
+    "section_3_desc": "Read authentic reviews from real users"
+  },
+  "chat": {
+    "title": "Chat with AI",
+    "clear_button": "Clear Chat",
+    "clear": "🗑 Clear Chat",
+    "end": "✅ End Chat",
+    "no_result": "🤖 No recommendation was generated.",
+    "request_failed": "⚠️ Request failed. Please check your network or backend service.",
+    "select_language": "🌐 Select Language:",
+    "language": {
+      "zh": "Chinese",
+      "en": "English"
     },
-    "nav": {
-        "home": "Home",
-        "chat": "Chat",
-        "studio": "Studio", 
-        "knowledge": "Knowledge",
-        "dashboard": "Dashboard",
-        "sign_in": "Sign In"
+    "select_model": "🤖 Select Model:",
+    "chat_id_not_found": "Chat ID not found. Cannot proceed to the survey.",
+    "send_button": "Send",
+    "placeholder": "Enter your message...",
+    "welcome": "👋 Hello! Looking for places to see, eat or play? Tell me your interests or schedule and I’ll recommend places to visit in Beijing!",
+    "welcome_back": "👋 Welcome back! Let me know what you're looking for next.",
+    "no_response": "🤖 No recommendation result was generated.",
+    "network_error": "⚠️ Request failed. Please check your network or backend service.",
+    "history_title": "Chat History",
+    "no_history": "No chat history available.",
+    "chat_from": "Chat from",
+    "delete": "Delete",
+    "history_detail_title": "Chat History Detail",
+    "continue_chat": "Continue chatting...",
+    "confirm_delete": "Are you sure you want to delete this chat record?"
+  },
+  "nav": {
+    "home": "Home",
+    "chat": "Chat",
+    "knowledge": "Knowledge",
+    "studio": "Studio",
+    "dashboard": "Dashboard",
+    "setting": "Setting",
+    "sign_in": "Sign In"
+  },
+  "sidebar": {
+    "chat": {
+      "title": "Chat",
+      "mychat": "MyChat",
+      "history": "History"
     },
-    "sidebar": {
-        "knowledge": {
-            "title": "Knowledge",
-            "ontology": {
-                "title": "Ontologies",
-                "subtitle": "View the ontologies"
-            },
-            "graph":
-            {
-                "title": "Graphs",
-                "subtitle": "View the graphs"
-            }
-        }
-    }
+    "knowledge": {
+    "visualization": "Visualization",
+    "ontology": { "title": "Ontology" },
+    "hierarchy": "Hierarchy",
+    "graph": { "title": "KG" },
+    "graphs": "Knowledge Graphs",
+    "terminology_update": "Terminology & Ontology Update",
+    "kg_construction": "KG Construction",
+    "processing": "Processing",
+    "recommendation": "Recommendation System",
+    "recommendation_pipeline": "Pipeline",
+    "chat_interface": "Chat Interface"
+
+  }
+  },
+  "hierarchy": {
+  "structure": "Ontology Hierarchy Structure",
+  "showAll": "Show All Levels",
+  "hidePureSubclass": "Hide Pure Subclass",
+  "promptTitle": "Prompt Output",
+  "copy": "Copy",
+  "noData": "⚠️ No hierarchy data parsed"
+},
+  "terminology": {
+    "title": "Terminology Recommendation",
+    "empty": "No terminology available. Please click the file or button to load.",
+    "inputPlaceholder": "Paste the ontology structure text here (e.g., copied from Hierarchy)",
+    "getSuggestion": "✨ Get Smart Suggestions",
+    "noExpansion": "No expandable terminology available yet.",
+    "alertMissing": "Terms or ontology structure missing!",
+    "added": "You added to the ontology",
+    "upload_button": "Upload",
+    "upload_success": "✅ Upload succeeded: {{filename}}",
+    "upload_fail": "❌ Upload failed",
+    "no_terms": "No expandable terms available",
+    "suggest_button": "Get Smart Suggestions"
+  },
+  "kg": {
+  "upload_label": "Upload File Format Requirements",
+  "upload_button": "Upload File",
+  "no_file": "No files available",
+  "selected_file": "Selected file: ",
+  "select_prompt": "Select Prompt Template",
+  "prompt_placeholder": "Please enter your Prompt here",
+  "extract_button": "Extract Triples",
+  "extracting": "Extracting...",
+  "upload_neo4j": "Upload to Neo4j",
+  "status_title": "Extraction Status",
+  "result_display": "Extraction Result Display"
+}
+,
+"rec": {
+  "input_label": "Enter your recommendation query:",
+  "input_placeholder": "e.g., I want to enjoy flowers and food in Beijing during spring.",
+  "prompt_label": "Prompt instruction (LLM guiding)",
+  "prompt_placeholder": "e.g., Extract location, time, activity, restaurant, and return structured JSON",
+  "generate_button": "Generate Recommendation",
+  "translation_result": "Translation Result:",
+  "parsed_result_title": "Parsed Structured Information",
+  "parsed_waiting": "Waiting for generation...",
+  "cypher_title": "Generated Cypher Query",
+  "graph_results_title": "Graph Query Results (Candidates)",
+  "graph_waiting": "Waiting for query results...",
+  "final_title": "Final Recommendation (Natural Language)",
+  "final_empty": "No recommendation generated"
+}
+,
+  "ontology": {
+      "edit_title": "Edit Ontology",
+      "graph_title": "Ontology Graph",
+      "structure": "Ontology Structure",
+      "deleteMode": "Enter Delete Mode",
+      "exitDeleteMode": "Exit Delete Mode",
+      "noClasses": "⚠️ No Classes Parsed",
+      "selectParent": "Select Parent Class",
+      "newClassName": "New Class Name",
+      "add": "Add",
+      "delete": "Delete",
+      "confirmDeleteClass": "Are you sure you want to delete class \"{{className}}\"?",
+      "classTitle": "Classes",
+      "objectProperties": "Object Properties",
+      "noObjectProps": "⚠️ No Object Properties Parsed",
+      "propertyName": "Property Name",
+      "selectDomain": "Select Domain",
+      "selectRange": "Select Range",
+      "dataProperties": "Data Properties",
+      "noDataProps": "⚠️ No Data Properties Parsed",
+      "selectClass": "Select Class",
+      "selectType": "Select Type",
+      "resetGraph": "Reset Graph",
+      "exportGraph": "Export Graph"
+    },
+  "knowledge": {
+    "overview_title": "Knowledge Overview",
+    "overview_intro": "Here you can explore how <1>structured knowledge shapes</1>, and understand how the <3>recommendation pipeline</3> operates based on <5>dynamic knowledge updates</5>.",
+    "visualization_title": "Visualization",
+    "visualization_intro": "Intuitive views of the knowledge structure.",
+    "visualization_ontology": "Ontology Graph: Visualizes core concepts and their defined relationships.",
+    "visualization_hierarchy": "Hierarchy Structure: Displays multi-level entity classifications and dependencies.",
+    "visualization_kg": "KG Visualization: Enables interactive exploration of the full knowledge graph.",
+    "graphs_title": "Knowledge Graphs",
+    "graphs_intro": "Dynamically evolve through continuous updates.",
+    "graphs_update": "Terminology & Ontology Update: Incorporates new concepts, updating the ontology.",
+    "graphs_construction": "KG Construction: Extracts entities and relationships from new data, ensuring the graph stays current with new ontology structure.",
+    "graphs_processing": "Processing: Process data to improve graph quality and consistency.",
+    "recommendation_title": "Recommendation System",
+    "recommendation_intro": "The <1>Recommendation Pipeline</1> transforms knowledge graphs into real-time, personalized suggestions."
+  },
+  "SUS_TITLE": "SUS Survey Questionnaire",
+"SUS_CHAT_ID": "Current Chat ID",
+"SUS_INTRO": "Based on your experience, please rate each item from 1 to 5",
+"SUS_QUESTION_PREFIX": "Q",
+"SUS_THANKS": "✅ Thank you! Your response has been recorded.",
+"SUS_SUBMIT": "Submit Survey",
+"SUS_SELECT_PLACEHOLDER": "Please select...",
+"SUS_ALERT": "Please complete all scores!",
+"SUS_QUESTIONS": [
+  "I think that I would like to use this system frequently.",
+  "I found the system unnecessarily complex.",
+  "I thought the system was easy to use.",
+  "I think that I would need the support of a technical person to use this system.",
+  "I found the various functions in this system were well integrated.",
+  "I thought there was too much inconsistency in this system.",
+  "I would imagine that most people would learn to use this system very quickly.",
+  "I found the system very cumbersome to use.",
+  "I felt very confident using the system.",
+  "I needed to learn a lot of things before I could get going with this system."
+]
+
 }

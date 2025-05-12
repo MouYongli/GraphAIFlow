@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 interface UploadFileProps {
   onUploadSuccess: (filename: string) => void;
 }
@@ -9,7 +9,7 @@ interface UploadFileProps {
 const UploadFile: React.FC<UploadFileProps> = ({ onUploadSuccess }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const inputRef = useRef<HTMLInputElement>(null); // 👈 引入 input ref
-
+  const { t } = useTranslation("common");
   const handleUpload = async () => {
     if (!selectedFile) return;
 
@@ -56,7 +56,7 @@ const UploadFile: React.FC<UploadFileProps> = ({ onUploadSuccess }) => {
         }`}
         disabled={!selectedFile}
       >
-        上传术语文件
+        {t("terminology.upload_button")}
       </button>
     </div>
   );

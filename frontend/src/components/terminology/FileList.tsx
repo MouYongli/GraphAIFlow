@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 interface FileListProps {
   onExtractTerms: (filename: string, terms: string[]) => void;
 }
 
 const FileList: React.FC<FileListProps> = ({ onExtractTerms }) => {
   const [files, setFiles] = useState<string[]>([]);
-
+  const { t } = useTranslation("common");
   // 拉取文件列表
   const fetchFiles = async () => {
     try {
@@ -65,7 +65,7 @@ const FileList: React.FC<FileListProps> = ({ onExtractTerms }) => {
   return (
     <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-1 z-10">
       {files.length === 0 ? (
-        <div className="p-2 text-gray-500">暂无文件</div>
+        <div className="p-2 text-gray-500">{t("terminology.no_file")}</div>
       ) : (
         files.map((file) => (
           <div
@@ -82,7 +82,7 @@ const FileList: React.FC<FileListProps> = ({ onExtractTerms }) => {
               className="text-red-500 text-sm hover:text-red-700"
               onClick={() => handleDelete(file)}
             >
-              删除
+              {t("terminology.delete")}
             </button>
           </div>
         ))

@@ -6,6 +6,9 @@ import OntologyGraph from "@/components/knowledge/ontology/OntologyGraph";
 import OntologyEditor from "@/components/knowledge/ontology/OntologyEditor";
 import { OntologyNode } from "@/components/knowledge/ontology/OntologyTree";
 import type { ObjectProperty, DataProperty } from "@/components/knowledge/ontology/OntologyEditor";
+import { useTranslation } from "react-i18next";
+
+
 
 
 //  统一使用 OntologyNode，不再用 ExtendedOntologyNode
@@ -25,8 +28,9 @@ export default function OntologyPage() {
     links: [] as OntologyLink[],
     classes: [] as ExtendedOntologyNode[],
     object_properties: [] as ObjectProperty[],
-    data_properties: [] as DataProperty[],  // ✅ 这里修复
+    data_properties: [] as DataProperty[],  //  这里修复
   });
+  const { t } = useTranslation("common");
   
 
   const calculatePositions = (nodes: ExtendedOntologyNode[] = [], links: OntologyLink[] = []) => {
@@ -130,10 +134,10 @@ export default function OntologyPage() {
         type: prop.name || "ObjectProperty"
       }));
 
-      // ✅ 构建有效类 ID 集合
+      //  构建有效类 ID 集合
       const validClassIds = new Set(finalNodes.filter(n => n.type === "Class").map(n => n.id));
 
-      // ✅ 过滤掉 domain 不存在的 DataProperty
+      //  过滤掉 domain 不存在的 DataProperty
       const validDataProps = (graph.data_properties || []).filter((prop: any) =>
         validClassIds.has(prop.source)
       );
@@ -160,7 +164,7 @@ export default function OntologyPage() {
 
       
 
-      // ✅ 找出所有仍然被使用的 target（即所有有连线的数据类型）
+      //  找出所有仍然被使用的 target（即所有有连线的数据类型）
       const usedDataTypes = new Set(
         links
           .filter(link => link.type === "DataProperty")
@@ -185,7 +189,7 @@ export default function OntologyPage() {
       const allNodes = [...finalNodes, ...extraDataTypeNodes];
       
 
-      // ✅ 移除未被引用的数据类型节点
+      //  移除未被引用的数据类型节点
       const cleanedNodes = allNodes.filter(node => {
         if (node.type === "Datatype") {
           return usedDataTypes.has(node.id);  // 只保留仍被引用的 Datatype
@@ -265,7 +269,7 @@ export default function OntologyPage() {
           links
         ),
         object_properties: graph.object_properties || [],
-        data_properties: validDataProps,  // ✅ 使用过滤后的
+        data_properties: validDataProps,  //  使用过滤后的
       });
       
       
@@ -285,14 +289,15 @@ export default function OntologyPage() {
       <div className="col-span-2 flex flex-col gap-4">
         <FileUploadManager onParseFile={handleParseFile} onRefresh={() => console.log("刷新文件列表...")} />
           <div className="bg-gray-100 p-4 rounded-lg h-[600px] w-full overflow-hidden shadow">
-            <h2 className="text-xl font-bold mb-4">Ontology 知识图谱</h2>
+            <h2 className="text-xl font-bold mb-4">{t("ontology.graph_title")}</h2>
+
             <div className="relative w-full h-full">
               <OntologyGraph ontologyData={ontologyData} />
             </div>
           </div>
         </div>
       <div className="bg-white shadow-lg p-4 rounded-lg">
-        <h2 className="text-xl font-bold mb-4">编辑 Ontology</h2>
+      <h2 className="text-xl font-bold mb-4">{t("ontology.edit_title")}</h2>
         <OntologyEditor
           ontologyData={
             ontologyData || {
@@ -310,7 +315,7 @@ export default function OntologyPage() {
           }}
           onReset={() => {
             if (ontologyData.filename) {
-              handleParseFile(ontologyData.filename);  // ✅ 就是你原本想做的
+              handleParseFile(ontologyData.filename);  //  就是你原本想做的
             }
           }}
         />

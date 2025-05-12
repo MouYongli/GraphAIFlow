@@ -1,9 +1,6 @@
+// app/chat/page.tsx
+import { redirect } from 'next/navigation'
+
 export default function ChatPage() {
-    return (
-      <main className="p-8">
-        <h1 className="text-2xl font-bold mb-4">Chat with AI</h1>
-        <p>Start chatting by entering your message below.</p>
-      </main>
-    );
-  }
-  
+  redirect('/chat/MyChat')  // ✅ 小写路径
+}

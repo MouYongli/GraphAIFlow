@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Suggestion {
   term: string;
@@ -32,7 +33,7 @@ export default function OntologySuggestionPanel({
   existingProperties,
 }: Props) {
   const [selected, setSelected] = useState<Set<number>>(new Set());
-
+  const { t } = useTranslation("common");
   // ✨ 清洗 JSON 字符串
   const safeParseJSON = (input: any): any => {
     let result = input;
@@ -129,7 +130,7 @@ export default function OntologySuggestionPanel({
   return (
     <div className="mt-6">
       {flattened.length === 0 ? (
-        <p className="text-gray-500">暂无可扩展的术语</p>
+        <p className="text-gray-500">{t("terminology.no_terms")}</p>
       ) : (
         <>
           <table className="w-full text-sm table-fixed border border-gray-300">

@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "react-i18next";
 
 import React, { useState } from "react";
 import { Lightbulb, Network, Link2, FolderTree } from "lucide-react";
@@ -18,6 +19,8 @@ import { useRouter } from "next/navigation";
 
 const Sidebar: React.FC = () => {
   const router = useRouter();
+  const { t } = useTranslation("common");
+
   const [collapsed, setCollapsed] = useState(false); // 侧边栏开关
 
   // 侧边栏菜单项
@@ -25,53 +28,52 @@ const Sidebar: React.FC = () => {
     {
       key: "overview",
       icon: <BulbOutlined />,
-      label: "Overview",
+      label: t("sidebar.knowledge.visualization"),
       children: [
-        { key: "ontology", label: "Ontology", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology"),},
-        { key: "hierarchy", label: "Hierarchy", icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy"),},
-        { key: "KG", label: "KG", icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology/KG"),}
-        ],
+        { key: "ontology", label: t("sidebar.knowledge.ontology.title"), icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology") },
+        { key: "hierarchy", label: t("sidebar.knowledge.hierarchy"), icon: <FolderTree />, onClick: () => router.push("/knowledge/ontology/hierarchy") },
+        { key: "KG", label: t("sidebar.knowledge.graph.title"), icon: <Lightbulb />, onClick: () => router.push("/knowledge/ontology/KG") }
+      ],
     },
     {
       key: "graphs",
       icon: <MessageOutlined />,
-      label: "Knowledge Graphs",
+      label: t("sidebar.knowledge.graphs"),
       children: [
         {
           key: "terminology",
-          label: (
-            <span title="Terminology & Ontology Update">
-              Terminology & Ontology Update
-            </span>
-          ),
+          label: t("sidebar.knowledge.terminology_update"),
           onClick: () => router.push("/knowledge/graph"),
         },
-        
         {
           key: "processing",
-          label: "KG Construction",                
+          label: t("sidebar.knowledge.kg_construction"),
           onClick: () => router.push("/knowledge/graph/KGConstruction"),
-        },
-        {
-          key: "general",
-          label: "Processing",                 
-          onClick: () => router.push("/knowledge/graph/Processing"), 
         },
       ],
     },
     {
       key: "rec",
       icon: <MessageOutlined />,
-      label: "Recommendation System",
+      label: t("sidebar.knowledge.recommendation"),
       children: [
-        { key: "pipeline", label: "pipeline" , onClick: () => router.push("/knowledge/recommendationSystem"), },
+        {
+          key: "chat",
+          label: t("sidebar.knowledge.chat_interface"),
+          onClick: () => router.push("/chat"),
+        },        
+        {
+          key: "pipeline",
+          label: t("sidebar.knowledge.recommendation_pipeline"),
+          onClick: () => router.push("/knowledge/recommendationSystem"),
+        },
       ],
     },
-  
   ];
+  
 
   return (
-    <div className={`h-screen bg-gray-800 text-white flex flex-col transition-all duration-300 ${collapsed ? "w-16" : "w-64"}`}>
+    <div className={`min-h-screen bg-gray-800 text-white flex flex-col transition-all duration-300 ${collapsed ? "w-16" : "w-64"}`}>
       {/* 顶部栏 */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
         <span className={`text-xl font-bold ${collapsed ? "hidden" : "block"}`}>Knowledge</span>

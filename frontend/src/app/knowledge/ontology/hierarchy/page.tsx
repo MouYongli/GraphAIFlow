@@ -6,6 +6,7 @@ import HierarchyTree from "@/components/knowledge/ontology/HierarchyTree";
 import PromptTextBox from "@/components/knowledge/ontology/PromptTextBox";
 import { OntologyNode } from "@/components/knowledge/ontology/OntologyTree";
 import type { ObjectProperty, DataProperty } from "@/components/knowledge/ontology/OntologyEditor";
+import { useTranslation } from "react-i18next";
 
 interface OntologyLink {
   source: string;
@@ -98,7 +99,7 @@ export default function HierarchyPage() {
   const [hierarchy, setHierarchy] = useState<OntologyNode[]>([]);
   const [promptText, setPromptText] = useState("");
   const [showPureSubclass, setShowPureSubclass] = useState(false); // ✅ 控制切换状态
-
+  const { t } = useTranslation("common");
   const handleParseFile = async (filename: string, forceShowAll = showPureSubclass) => {
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/files/${filename}/parse`);
@@ -196,12 +197,12 @@ export default function HierarchyPage() {
           }}
         />
         <div className="bg-gray-100 p-4 rounded-lg h-[600px] overflow-hidden shadow relative">
-          <h2 className="text-xl font-bold mb-4">Ontology 层级结构</h2>
+          <h2 className="text-xl font-bold mb-4">{t("hierarchy.structure")}</h2>
           <button
             onClick={togglePureSubclassView}
             className="absolute top-2 right-4 bg-gray-200 px-3 py-1 rounded hover:bg-gray-300 text-sm"
           >
-            {showPureSubclass ? "隐藏纯子类" : "显示全部层级"}
+            {showPureSubclass ? t("hierarchy.hidePureSubclass") : t("hierarchy.showAll")}
           </button>
           <HierarchyTree data={hierarchy} />
         </div>
@@ -209,12 +210,12 @@ export default function HierarchyPage() {
 
       <div className="bg-white shadow-lg p-4 rounded-lg h-[700px] flex flex-col">
         <div className="flex justify-between items-center mb-2">
-          <h2 className="text-xl font-bold">Prompt 文本输出</h2>
+          <h2 className="text-xl font-bold">{t("hierarchy.promptTitle")}</h2>
           <button
             onClick={handleCopy}
             className="bg-gray-200 hover:bg-gray-300 text-sm px-2 py-1 rounded"
           >
-             复制
+             {t("hierarchy.copy")}
           </button>
         </div>
         <PromptTextBox content={promptText} />

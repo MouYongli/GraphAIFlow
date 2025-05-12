@@ -1,5 +1,6 @@
 import { useState } from "react"; 
 import OntologyTree, { OntologyNode } from "./OntologyTree";
+import { useTranslation } from "react-i18next";
 
 export interface ObjectProperty {
   name: string;
@@ -34,6 +35,7 @@ export default function OntologyEditor({ ontologyData, onRefresh, onReset }: Ont
     console.error("❌ `ontologyData` 为空，检查数据传递！");
     return <p className="text-red-500">⚠️ 加载本体数据失败</p>;
   }
+  const { t } = useTranslation("common");
 
   const [deleteMode, setDeleteMode] = useState(false);
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
@@ -273,207 +275,209 @@ const handleExport = async () => {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">Ontology 结构</h2>
-
-      <div className="mb-2">
-        <button
-          className={`px-3 py-1 rounded text-sm ${deleteMode ? "bg-red-600 text-white" : "bg-gray-200"}`}
-          onClick={() => setDeleteMode(!deleteMode)}
-        >
-          {deleteMode ? "退出删除模式" : "进入删除模式"}
-        </button>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-semibold mt-4">Classes</h3>
-        {ontologyData.classes.length > 0 ? renderClassHierarchy(ontologyData.classes) : <p className="text-gray-500">⚠️ 没有解析到 Classes</p>}
-        <div className="mt-2 flex gap-2 items-center">
-          <select
-            className="border px-2 py-1 rounded text-sm"
-            value={selectedParent}
-            onChange={(e) => setSelectedParent(e.target.value)}
-          >
-            <option value="">选择父类</option>
-            {extractAllClassNames().map((name, i) => (
-              <option key={i} value={name}>{name}</option>
-            ))}
-          </select>
-          <input
-            className="border px-2 py-1 text-sm rounded"
-            placeholder="新类名"
-            value={newClassName}
-            onChange={(e) => setNewClassName(e.target.value)}
-          />
+      <h2 className="text-xl font-bold mb-4">{t("ontology.structure")}</h2>
+        <div className="mb-2">
           <button
-            type="button"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
-            onClick={handleAddClass}
+            className={`px-3 py-1 rounded text-sm ${deleteMode ? "bg-red-600 text-white" : "bg-gray-200"}`}
+            onClick={() => setDeleteMode(!deleteMode)}
           >
-            添加
+            {deleteMode ? t("ontology.exitDeleteMode") : t("ontology.deleteMode")}
           </button>
         </div>
-      </div>
 
-      <div>
-      <h3
-        className="text-lg font-semibold mt-4 cursor-pointer flex items-center"
-        onClick={() => setShowObjectProps(!showObjectProps)}
-      >
-        <span className="mr-1">{showObjectProps ? "▾" : "▸"}</span> Object Properties
-      </h3>
-      {showObjectProps && ontologyData.object_properties.length > 0 ? (
-          <ul>
-            {ontologyData.object_properties.map((prop, index) => (
-              <li key={index} className="flex gap-2 items-center">
-                {prop.name} (ObjectProperty)
-                <span className="text-gray-500 text-sm ml-2">
-                  [{prop.source} → {prop.target}]
-                </span>
-                {deleteMode && (
-                  <button
-                    onClick={() => handleDeleteObjectProperty(prop.name)}
-                    className="text-red-500 hover:text-red-700 text-sm"
-                  >
-                    删除
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : <p className="text-gray-500">⚠️ 没有解析到 Object Properties</p>}
-
-        <div className="mt-2 flex flex-col gap-2">
-          <input
-            className="border px-2 py-1 text-sm rounded"
-            placeholder="属性名"
-            value={newObjectProp}
-            onChange={(e) => setNewObjectProp(e.target.value)}
-          />
-          <div className="flex gap-2">
+        <div>
+          <h3 className="text-lg font-semibold mt-4">{t("ontology.classTitle")}</h3>
+          {ontologyData.classes.length > 0 ? (
+            renderClassHierarchy(ontologyData.classes)
+          ) : (
+            <p className="text-gray-500">{t("ontology.noClasses")}</p>
+          )}
+          <div className="mt-2 flex gap-2 items-center">
             <select
               className="border px-2 py-1 rounded text-sm"
-              value={objectDomain}
-              onChange={(e) => setObjectDomain(e.target.value)}
+              value={selectedParent}
+              onChange={(e) => setSelectedParent(e.target.value)}
             >
-              <option value="">选择 domain</option>
+              <option value="">{t("ontology.selectParent")}</option>
               {extractAllClassNames().map((name, i) => (
                 <option key={i} value={name}>{name}</option>
               ))}
             </select>
-            <select
-              className="border px-2 py-1 rounded text-sm"
-              value={objectRange}
-              onChange={(e) => setObjectRange(e.target.value)}
-            >
-              <option value="">选择 range</option>
-              {extractAllClassNames().map((name, i) => (
-                <option key={i} value={name}>{name}</option>
-              ))}
-            </select>
+            <input
+              className="border px-2 py-1 text-sm rounded"
+              placeholder={t("ontology.className")}
+              value={newClassName}
+              onChange={(e) => setNewClassName(e.target.value)}
+            />
             <button
               type="button"
               className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
-              onClick={handleAddObjectProperty}
+              onClick={handleAddClass}
             >
-              添加
+              {t("ontology.add")}
             </button>
           </div>
         </div>
-      </div>
 
-      <div>
-      <h3
-        className="text-lg font-semibold mt-4 cursor-pointer flex items-center"
-        onClick={() => setShowDataProps(!showDataProps)}
-      >
-        <span className="mr-1">{showDataProps ? "▾" : "▸"}</span> Data Properties
-      </h3>
-      {showDataProps && ontologyData.data_properties.length > 0 ? (
-        <ul>
-            {ontologyData.data_properties.map((prop, index) => (
-              <li key={index} className="flex gap-2 items-center">
-                {prop.name} (DataProperty)
-                {prop.source && prop.target && (
+        <div>
+          <h3
+            className="text-lg font-semibold mt-4 cursor-pointer flex items-center"
+            onClick={() => setShowObjectProps(!showObjectProps)}
+          >
+            <span className="mr-1">{showObjectProps ? "▾" : "▸"}</span>
+            {t("ontology.objectProperties")}
+          </h3>
+          {showObjectProps && ontologyData.object_properties.length > 0 ? (
+            <ul>
+              {ontologyData.object_properties.map((prop, index) => (
+                <li key={index} className="flex gap-2 items-center">
+                  {prop.name} (ObjectProperty)
                   <span className="text-gray-500 text-sm ml-2">
-                    [{prop.source} → {prop.target} : {prop.rangeType}]
+                    [{prop.source} → {prop.target}]
                   </span>
-                )}
-                {deleteMode && (
-                  <button
-                    onClick={() => handleDeleteDataProperty(prop.name)}
-                    className="text-red-500 hover:text-red-700 text-sm"
-                  >
-                    删除
-                  </button>
-                )}
-              </li>
-            ))}
-
-          </ul>
-        ) : <p className="text-gray-500">⚠️ 没有解析到 Data Properties</p>}
-
-        <div className="mt-2 flex flex-col gap-2">
-          <input
-            className="border px-2 py-1 text-sm rounded"
-            placeholder="属性名"
-            value={newDataProp}
-            onChange={(e) => setNewDataProp(e.target.value)}
-          />
-          <div className="flex gap-2">
-            <select
-              className="border px-2 py-1 rounded text-sm"
-              value={dataDomain}
-              onChange={(e) => setDataDomain(e.target.value)}
-            >
-              <option value="">所属类</option>
-              {extractAllClassNames().map((name, i) => (
-                <option key={i} value={name}>{name}</option>
+                  {deleteMode && (
+                    <button
+                      onClick={() => handleDeleteObjectProperty(prop.name)}
+                      className="text-red-500 hover:text-red-700 text-sm"
+                    >
+                      {t("ontology.delete")}
+                    </button>
+                  )}
+                </li>
               ))}
-            </select>
-            <select
-              className="border px-2 py-1 rounded text-sm"
-              value={dataType}
-              onChange={(e) => setDataType(e.target.value)}
-            >
-              <option value="string">string</option>
-              <option value="int">int</option>
-              <option value="float">float</option>
-              <option value="boolean">boolean</option>
-            </select>
-            <button
-              type="button"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
-              onClick={handleAddDataProperty}
-            >
-              添加
-            </button>
-          </div> 
+            </ul>
+          ) : (
+            <p className="text-gray-500">{t("ontology.noObjectProps")}</p>
+          )}
 
-          <div className="mt-6 flex gap-4 flex-wrap">
-            {/* 🆕 新按钮 1 */}
-            <button
-              className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
-              onClick={handleReset}
-            >
-              重置图谱
-            </button>
-            
-
-            <button
-              className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded"
-              onClick={handleExport}
-            >
-              导出图谱
-            </button>
-
-            
-
-            
+          <div className="mt-2 flex flex-col gap-2">
+            <input
+              className="border px-2 py-1 text-sm rounded"
+              placeholder={t("ontology.propertyName")}
+              value={newObjectProp}
+              onChange={(e) => setNewObjectProp(e.target.value)}
+            />
+            <div className="flex gap-2">
+              <select
+                className="border px-2 py-1 rounded text-sm"
+                value={objectDomain}
+                onChange={(e) => setObjectDomain(e.target.value)}
+              >
+                <option value="">{t("ontology.selectDomain")}</option>
+                {extractAllClassNames().map((name, i) => (
+                  <option key={i} value={name}>{name}</option>
+                ))}
+              </select>
+              <select
+                className="border px-2 py-1 rounded text-sm"
+                value={objectRange}
+                onChange={(e) => setObjectRange(e.target.value)}
+              >
+                <option value="">{t("ontology.selectRange")}</option>
+                {extractAllClassNames().map((name, i) => (
+                  <option key={i} value={name}>{name}</option>
+                ))}
+              </select>
+              <button
+                type="button"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+                onClick={handleAddObjectProperty}
+              >
+                {t("ontology.add")}
+              </button>
+            </div>
           </div>
-
-
         </div>
-      </div>
+
+        <div>
+          <h3
+            className="text-lg font-semibold mt-4 cursor-pointer flex items-center"
+            onClick={() => setShowDataProps(!showDataProps)}
+          >
+            <span className="mr-1">{showDataProps ? "▾" : "▸"}</span>
+            {t("ontology.dataProperties")}
+          </h3>
+          {showDataProps && ontologyData.data_properties.length > 0 ? (
+            <ul>
+              {ontologyData.data_properties.map((prop, index) => (
+                <li key={index} className="flex gap-2 items-center">
+                  {prop.name} (DataProperty)
+                  {prop.source && prop.target && (
+                    <span className="text-gray-500 text-sm ml-2">
+                      [{prop.source} → {prop.target} : {prop.rangeType}]
+                    </span>
+                  )}
+                  {deleteMode && (
+                    <button
+                      onClick={() => handleDeleteDataProperty(prop.name)}
+                      className="text-red-500 hover:text-red-700 text-sm"
+                    >
+                      {t("ontology.delete")}
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-500">{t("ontology.noDataProps")}</p>
+          )}
+
+          <div className="mt-2 flex flex-col gap-2">
+            <input
+              className="border px-2 py-1 text-sm rounded"
+              placeholder={t("ontology.propertyName")}
+              value={newDataProp}
+              onChange={(e) => setNewDataProp(e.target.value)}
+            />
+            <div className="flex gap-2">
+              <select
+                className="border px-2 py-1 rounded text-sm"
+                value={dataDomain}
+                onChange={(e) => setDataDomain(e.target.value)}
+              >
+                <option value="">{t("ontology.selectClass")}</option>
+                {extractAllClassNames().map((name, i) => (
+                  <option key={i} value={name}>{name}</option>
+                ))}
+              </select>
+              <select
+                className="border px-2 py-1 rounded text-sm"
+                value={dataType}
+                onChange={(e) => setDataType(e.target.value)}
+              >
+                <option value="string">string</option>
+                <option value="int">int</option>
+                <option value="float">float</option>
+                <option value="boolean">boolean</option>
+              </select>
+              <button
+                type="button"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+                onClick={handleAddDataProperty}
+              >
+                {t("ontology.add")}
+              </button>
+            </div>
+
+            <div className="mt-6 flex gap-4 flex-wrap">
+              <button
+                className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
+                onClick={handleReset}
+              >
+                {t("ontology.resetGraph")}
+              </button>
+
+              <button
+                className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded"
+                onClick={handleExport}
+              >
+                {t("ontology.exportGraph")}
+              </button>
+            </div>
+          </div>
+        </div>
+
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 from typing import List, Optional
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, HTTPException
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from app.utils.chat_model_client import call_chat_api
 from app.utils.chat_model_utils import build_prompt_for_terminology_suggestion
@@ -7,7 +8,6 @@ import os
 import json
 
 router = APIRouter()
-
 
 # 原有接口：聊天 + 清空日志（保留不动）
 class Message(BaseModel):
@@ -17,6 +17,21 @@ class Message(BaseModel):
 class ChatRequest(BaseModel):
     content: str
     chat_history: Optional[List[Message]] = None
+
+def load_ratings():
+    rating_file = "logs/chat/rating_log.jsonl"
+    if not os.path.exists(rating_file):
+        return []
+
+    ratings = []
+    with open(rating_file, "r", encoding="utf-8") as f:
+        for line in f:
+            try:
+                ratings.append(json.loads(line.strip()))
+            except:
+                continue
+    return ratings
+
 
 @router.post("/chat")
 def chat_with_ai(request: ChatRequest):
@@ -37,7 +52,7 @@ def clear_chat_history():
                 os.remove(os.path.join(log_dir, f))
     return {"status": "cleared"}
 
-# ✅ 新增接口：术语推荐用 DeepSeek 生成建议
+#  新增接口：术语推荐用 DeepSeek 生成建议
 @router.post("/deepseek/ontology_suggestion")
 async def suggest_ontology_update(request: Request):
     body = await request.json()
@@ -60,7 +75,7 @@ async def suggest_ontology_update(request: Request):
             "reasoning": result_text
         }]
     except Exception as e:
-        # ✅ 捕获模型接口异常，并返回详细提示
+        #  捕获模型接口异常，并返回详细提示
         return {
             "result": [{
                 "term": "模型调用失败",
@@ -71,3 +86,163 @@ async def suggest_ontology_update(request: Request):
         }
 
     return {"result": suggestions}
+
+#  新增接口：获取聊天历史记录文件名
+@router.get("/chat/history")
+def get_chat_history():
+    log_dir = "logs/chat"
+    if not os.path.exists(log_dir):
+        return []
+    files = os.listdir(log_dir)
+    chat_ids = [
+        f.replace(".json", "") for f in files
+        if f.startswith("frontend_chat_") and f.endswith(".json")
+    ]
+    return JSONResponse(content=chat_ids)
+
+#  新增接口：删除指定聊天记录文件
+@router.delete("/chat/delete/{chat_id}")
+def delete_chat_file(chat_id: str):
+    log_dir = "logs/chat"
+    file_path = os.path.join(log_dir, f"{chat_id}.json")
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        return {"message": "deleted"}
+    else:
+        raise HTTPException(status_code=404, detail="File not found")
+
+
+@router.get("/chat/load/{chat_id}")
+def load_chat_file(chat_id: str):
+    log_dir = "logs/chat"
+    file_path = os.path.join(log_dir, f"{chat_id}.json")
+    if os.path.exists(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        raise HTTPException(status_code=404, detail="Chat record not found")
+
+@router.get("/chat/summary")
+async def get_chat_summary():
+    ratings = load_ratings()
+    
+    chat_summary = {}
+    for r in ratings:
+        cid = r["chat_id"]
+        if cid not in chat_summary:
+            chat_summary[cid] = {"count": 0, "sum": 0}
+        chat_summary[cid]["count"] += 1
+        chat_summary[cid]["sum"] += r["score"]
+    
+    result = []
+    for cid, info in chat_summary.items():
+        avg = round(info["sum"] / info["count"], 2)
+        result.append({
+            "chat_id": cid,
+            "score_count": info["count"],
+            "average_score": avg
+        })
+
+    return result
+
+
+@router.post("/chat/survey_result")
+def save_sus_result(data: dict):
+    chat_id = data.get("chat_id")
+    detail_scores = data.get("detail_scores", [])
+
+    if not chat_id or not detail_scores:
+        raise HTTPException(status_code=400, detail="缺少 chat_id 或 detail_scores")
+
+    # ✅ 计算平均分
+    avg_score = round(sum(detail_scores) / 10, 2)
+
+    folder = "logs/chat_survey"
+    os.makedirs(folder, exist_ok=True)
+    with open(os.path.join(folder, f"{chat_id}_sus.json"), "w", encoding="utf-8") as f:
+        json.dump({
+            "chat_id": chat_id,
+            "sus_score": avg_score,          # ✅ 保存的是平均分了
+            "detail_scores": detail_scores
+        }, f, ensure_ascii=False)
+
+    return {"message": "问卷已保存"}
+
+
+
+
+@router.get("/chat/survey_list")
+def get_survey_list():
+    folder = "logs/chat_survey"
+    if not os.path.exists(folder):
+        return []
+    
+    records = []
+    for fname in os.listdir(folder):
+        if fname.endswith("_sus.json"):
+            try:
+                with open(os.path.join(folder, fname), "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    records.append(data)
+            except:
+                continue
+    return records
+
+
+@router.get("/chat/survey/{chat_id}")
+def get_survey_result(chat_id: str):
+    folder = "logs/chat_survey"
+    file_path = os.path.join(folder, f"{chat_id}_sus.json")
+    if os.path.exists(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        raise HTTPException(status_code=404, detail="问卷记录未找到")
+
+@router.post("/chat/save_log")
+def save_chat_log(data: dict):
+    chat_id = data.get("chat_id")
+    messages = data.get("messages")
+
+    if not chat_id or not messages:
+        raise HTTPException(status_code=400, detail="缺少 chat_id 或 messages")
+
+    folder = "logs/chat"
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, f"{chat_id}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(messages, f, ensure_ascii=False, indent=2)
+
+    return {"message": "保存成功"}
+
+@router.post("/chat/rate")
+def save_rating(data: dict):
+    chat_id = data.get("chat_id")
+    message_id = data.get("message_id")
+    score = data.get("score")
+
+    if not chat_id or message_id is None or score is None:
+        raise HTTPException(status_code=400, detail="缺少 chat_id、message_id 或 score")
+
+    folder = "logs/chat"
+    os.makedirs(folder, exist_ok=True)
+    file_path = os.path.join(folder, "rating_log.jsonl")
+    with open(file_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps({
+            "chat_id": chat_id,
+            "message_id": message_id,
+            "score": score
+        }, ensure_ascii=False) + "\n")
+
+    return {"message": "评分已保存"}
+
+
+
+
+@router.get("/chat/ratings/{chat_id}")
+def get_chat_ratings(chat_id: str):
+    ratings = load_ratings()
+    matched = [r for r in ratings if r["chat_id"] == chat_id]
+    return matched
+
+

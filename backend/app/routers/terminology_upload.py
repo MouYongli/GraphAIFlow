@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from app.utils import terminology_extractor
 import os
 from fastapi import Query
+import pandas as pd
 
 
 router = APIRouter()
@@ -65,5 +66,25 @@ def extract_terms_route(filename: str):
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
 
+@router.get("/extract_texts")
+def extract_texts(filename: str = Query(...)):
+    file_path = os.path.join(UPLOAD_DIR, filename)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="文件不存在")
 
+    try:
+        df = pd.read_excel(file_path)
+        # 自动检测包含内容的列
+        text_col = None
+        for col in df.columns:
+            if "内容" in col or "text" in col.lower():
+                text_col = col
+                break
+        if not text_col:
+            raise HTTPException(status_code=400, detail="未找到包含内容的列")
+
+        texts = df[text_col].astype(str).tolist()
+        return {"texts": texts}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 

@@ -3,45 +3,51 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Dict
+import requests
 import json5
 import re
 from neo4j import GraphDatabase
 from googletrans import Translator
 from langdetect import detect
-from together import Together
+
 from dotenv import load_dotenv
-import os
+
 
 translator = Translator()
 load_dotenv()
 
 def call_translation_llm(prompt: str) -> str:
-    api_key = os.getenv("TOGETHER_API_KEY")
-    client = Together(api_key=api_key)
+    url = "http://ollama.warhol.informatik.rwth-aachen.de/api/chat"
+    model = "deepseek-r1:7b"
+
+    messages = [
+        {"role": "system", "content": "你是一个专业翻译助手。"},
+        {"role": "user", "content": prompt}
+    ]
+
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0.1,
+        "stream": False
+    }
 
     try:
-        response = client.chat.completions.create(
-            model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
-            messages=[
-                {"role": "system", "content": "你是一个专业翻译助手。"},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.1,
-            max_tokens=2048,
-            seed=42
-        )
+        response = requests.post(url, json=payload, timeout=60)
+        response.raise_for_status()
+        content = response.json()["message"]["content"].strip()
 
-        content = response.choices[0].message.content.strip()
-        content = re.sub(r"[。！？；：，、]", "", content)
-        # Step 1：去掉 <think> 标签内容
+        #  Step 1：去掉 <think> 标签内容
         content = re.sub(r"<think>[\s\S]*?</think>", "", content, flags=re.IGNORECASE).strip()
 
         # Step 2：返回清洗后的全部内容
         return content if content else "[空响应]"
 
+
     except Exception as e:
         print("❌ 翻译失败：", e)
         return "[Translation failed]"
+
 
 def translate_to_chinese_by_llm(text: str) -> str:
     prompt = (
@@ -80,9 +86,6 @@ router = APIRouter()
 class RecommendRequest(BaseModel):
     question: str
     prompt: str
-    lang: str  # 'zh' or 'en'
-    model_name: str  # 新增字段，模型名称，如 deepseek 或 llama3.3
-
 
 # 返回体 schema
 class RecommendResponse(BaseModel):
@@ -91,14 +94,13 @@ class RecommendResponse(BaseModel):
     graphResults: List[str]
     finalText: str
     translatedInput: str
-    isRecommendation: bool
 
 
-def call_deepseek_llm(model_name: str,prompt: str, question: str) -> dict:
-    api_key = os.getenv("TOGETHER_API_KEY")
-    client = Together(api_key=api_key)
+def call_deepseek_llm(prompt: str, question: str) -> dict:
+    url = "http://ollama.warhol.informatik.rwth-aachen.de/api/chat"
+    model = "deepseek-r1:7b"
 
-    # 设置默认 prompt
+    #  设置默认 prompt（用户如果没输入，就用这个）
     if not prompt.strip():
         prompt = """你是一个结构化信息抽取助手，请从用户输入的旅游推荐问题中，提取关键实体，并按照下列类别分类：
         - City（城市）
@@ -125,37 +127,39 @@ def call_deepseek_llm(model_name: str,prompt: str, question: str) -> dict:
         请仅输出如上 JSON 内容，任何额外内容都会导致系统解析失败。
         """
 
-    system_message = "请严格按照 JSON 格式返回实体类别映射"
-    user_message = f"{prompt}\n\n用户输入：{question}"
+
+    messages = [
+        {"role": "system", "content": "请严格按照 JSON 格式返回实体类别映射"},
+        {"role": "user", "content": f"{prompt}\n\n用户输入：{question}"}
+    ]
+
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0.1,
+        "stream": False
+    }
 
     try:
-        response = client.chat.completions.create(
-            model=model_name,
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": user_message}
-            ],
-            temperature=0.1,
-            max_tokens=2048,
-            seed=42
-        )
-        content = response.choices[0].message.content.strip()
+        response = requests.post(url, json=payload, timeout=90)
+        response.raise_for_status()
+    
+        content = response.json()["message"]["content"]
 
-        # ✅ 只提取第一个合法 JSON 块（防止多余解释）
-        json_match = re.search(r'\{[\s\S]*?\}', content)
+        import re
+        json_match = re.search(r'\{[\s\S]*\}', content)
         if json_match:
             return json5.loads(json_match.group())
         else:
-            print("❌ JSON 匹配失败内容：", content)
             raise ValueError("未找到合法 JSON 内容")
 
     except Exception as e:
         print("❌ 模型调用失败：", e)
         return {
             "error": str(e),
-            "raw": content if 'content' in locals() else "无响应"
+            "raw": response.text if 'response' in locals() else "无响应"
         }
-    
+
 def sanitize_cypher(cypher: str) -> str:
     import re
 
@@ -212,9 +216,7 @@ def filter_cypher_blocks_by_entities(parsed: dict, cypher_lines: List[str]) -> L
 
 # 将其单独定义为一个 prompt 生成函数
 def generate_cypher_by_llm(parsed: dict, question: str) -> str:
-    api_key = os.getenv("TOGETHER_API_KEY")
-    client = Together(api_key=api_key)
-
+    #  防止 f-string 中 question 含有 `{}` 导致格式化错误
     safe_question = question.replace("{", "{{").replace("}", "}}")
 
     prompt = f"""
@@ -248,10 +250,9 @@ def generate_cypher_by_llm(parsed: dict, question: str) -> str:
 {json5.dumps(parsed, ensure_ascii=False)}
 
 【生成要求】
-- 严禁使用中文词语作为语法连接，例如“和”“然后”“接着”；每条语句必须单独写一行 Cypher；
 - 所有条件都必须使用 `OPTIONAL MATCH`，每一条结构化信息一条语句；
 - ❗禁止将 city 信息作为实体属性使用，例如 ❌ (a:TouristAttraction {{city: "北京"}}) 是非法的；
-- 城市只能通过 (a)-[:locatedIn]->(c:City {{name: "北京"}}) 来表达；
+-  城市只能通过 (a)-[:locatedIn]->(c:City {{name: "北京"}}) 来表达；
 - 禁止生成未定义的节点标签（如 CityName、TimeName、Place、Spot 等）；
 - 禁止出现语法错误，如 `))->(`、`))`、括号不匹配等；
 - RETURN 子句必须统一写在最后，写成：`RETURN a.name, r.name, e.name, cu.name, t.name`，即所有常用节点的名称；
@@ -264,69 +265,42 @@ OPTIONAL MATCH (r:Restaurant)-[:bestTimeToVisit]->(t:Time {{name: "春天"}})
 RETURN a.name, r.name, e.name, cu.name, t.name
 """
 
-    try:
-        response = client.chat.completions.create(
-            model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
-            messages=[
-                {"role": "system", "content": "你是一个旅游图谱查询助手，请返回合法的 Cypher 查询语句，不要输出多余文字"},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.1,
-            max_tokens=2048,
-            seed=42
-        )
 
-        content = response.choices[0].message.content.strip()
-        
-        # 清除 markdown 格式包裹
-        content = content.replace("```cypher", "").replace("```", "").strip()
-        # 尝试清理一些已知问题
-        content = content.replace(")->(", ")-[:locatedIn]->(").replace("))", ")")
+    messages = [
+        {"role": "system", "content": "你是一个旅游图谱查询助手，请返回合法的 Cypher 查询语句，不要输出多余文字"},
+        {"role": "user", "content": prompt}
+    ]
 
-        # 更严格地按行过滤，只保留看起来像 Cypher 的行
-        valid_cypher_lines = []
-        potential_lines = content.splitlines() # 按行分割
+    payload = {
+        "model": "deepseek-r1:7b",
+        "messages": messages,
+        "temperature": 0.1,
+        "stream": False
+    }
 
-        for line in potential_lines:
-            cleaned_line = line.strip()
-            # 检查行是否以常见的 Cypher 关键字开头（忽略大小写）
-            if cleaned_line and cleaned_line.upper().startswith((
-                "OPTIONAL MATCH", "MATCH", "RETURN", "WHERE", "WITH", "UNWIND", "CREATE", "MERGE", "SET", "DELETE", "DETACH"
-            )):
-                # 再次清理可能残留的中文标点（以防万一）
-                cleaned_line = re.sub(r"[。！？；：，、]", "", cleaned_line)
-                valid_cypher_lines.append(cleaned_line)
-            elif cleaned_line: # 如果行不为空但不是有效开头，可以选择打印警告
-                print(f"⚠️ [Cypher Gen] 忽略了非预期行: {cleaned_line}")
-
-        # 如果过滤后没有有效的行
-        if not valid_cypher_lines:
-            print("⚠️ [Cypher Gen] 清理后没有有效的 Cypher 行。")
-            return "// 查询语句生成失败或为空"
-
-        cypher_to_sanitize = "\n".join(valid_cypher_lines) # 如果不过滤
-
-        # 调用清理函数（确保 sanitize_cypher 能正确处理 RETURN）
-        final_cypher = sanitize_cypher(cypher_to_sanitize)
-
-        # 检查最终结果是否有效
-        if not final_cypher or final_cypher.strip().startswith("//"):
-            print("⚠️ [Cypher Gen] sanitize_cypher 后查询无效或为空。")
-            return "// 查询语句生成失败或为空"
-
-        print(f"✅ [Cypher Gen] Generated Cypher: \n{final_cypher}") # 打印最终生成的 Cypher
-        return final_cypher
+    response = requests.post("http://ollama.warhol.informatik.rwth-aachen.de/api/chat", json=payload)
+    response.raise_for_status()
+    content = response.json()["message"]["content"]
+        # 强制清除 markdown ``` 包裹
+    content = content.replace("```cypher", "").replace("```", "").strip()
+    # 清理不合法闭合括号（临时处理）
+    content = content.replace(")->(", ")-[:locatedIn]->(").replace("))", ")")
 
 
-    except Exception as e:
-        print("❌ Cypher 生成失败：", e)
-        return "// 查询语句生成失败"
+    # 正则提取 Cypher 代码块
+    import re
+    cypher_block = re.findall(r'(?i)(MATCH .*?)(?=\n\n|\Z)', content, re.DOTALL)
+    cypher_str = "\n".join(cypher_block)
+    cypher_lines = cypher_str.splitlines()
+    filtered_lines = filter_cypher_blocks_by_entities(parsed, cypher_lines)
+    return sanitize_cypher("\n".join(filtered_lines)) if filtered_lines else "// 无匹配实体"
+
     
 def generate_natural_response_by_llm(question: str, results: List[Dict]) -> str:
-    api_key = os.getenv("TOGETHER_API_KEY")
-    client = Together(api_key=api_key)
+    url = "http://ollama.warhol.informatik.rwth-aachen.de/api/chat"
+    model = "deepseek-r1:7b"
 
-    # 提取前几个实体名称，最多 5 个
+    # 只提取前几个实体名称
     names = []
     for record in results:
         for key in ["a.name", "r.name", "e.name", "cu.name", "t.name"]:
@@ -340,33 +314,36 @@ def generate_natural_response_by_llm(question: str, results: List[Dict]) -> str:
 {joined}
 
 请根据这些实体，组织一段简洁自然的推荐语句，风格友好、生活化，不需要太多解释，也不要列清单。
+
 【输出要求】：
 - 只输出一段自然语言推荐句；
 - 推荐内容只能使用以上提取出的实体，不能发挥、不能扩展；
 - 不加“以下是您推荐的内容”或“查询结果如下”；
-- 不超过 80 个字，像朋友推荐那样自然。
+- 不超过 50 个字，像朋友推荐那样自然。
 
 只输出最终结果即可。
 """
+    messages = [
+        {"role": "system", "content": "你是一个旅游推荐助手，请生成简洁自然的推荐话术"},
+        {"role": "user", "content": prompt}
+    ]
+
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0.7,
+        "stream": False
+    }
 
     try:
-        response = client.chat.completions.create(
-            model="deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
-            messages=[
-                {"role": "system", "content": "你是一个旅游推荐助手，请生成简洁自然的推荐话术"},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.7,
-            max_tokens=256,
-            seed=42
-        )
+        response = requests.post(url, json=payload, timeout=60)
+        response.raise_for_status()
+        content = response.json()["message"]["content"].strip()
 
-        content = response.choices[0].message.content.strip()
-
-        # 去除 <think> 标签内容
+        # 去除 <think> 标签内容（新增）
         content = re.sub(r"<think>[\s\S]*?</think>", "", content, flags=re.IGNORECASE).strip()
 
-        # 提取最后一句非空文本行
+        # 提取最后一句非空文本行（可选，但建议加）
         lines = [line.strip() for line in content.splitlines() if line.strip()]
         return lines[-1] if lines else "这里有一些不错的地方值得一去～"
 
@@ -375,18 +352,17 @@ def generate_natural_response_by_llm(question: str, results: List[Dict]) -> str:
         return "这里有一些不错的地方值得一去～"
 
 
+
 @router.post("/api/recommend", response_model=RecommendResponse)
 async def recommend(request: RecommendRequest):
     original_question = request.question
-    lang_code = request.lang  # ✅ 使用前端传入值
-
-    is_english = lang_code == "en"
-    is_chinese = lang_code == "zh"
+    is_chinese = detect(original_question).startswith("zh")
+    is_english = detect(original_question) == "en"
     # 如果不是中文就翻译成中文
     question = translate_to_chinese_by_llm(original_question) if not is_chinese else original_question
 
     #  Step 2: 调用 LLM 抽取结构化信息
-    parsed_info = call_deepseek_llm(request.model_name, request.prompt, question)
+    parsed_info = call_deepseek_llm(request.prompt, question)
 
     if "error" in parsed_info:
         return RecommendResponse(
@@ -415,13 +391,8 @@ async def recommend(request: RecommendRequest):
     else:
         final_text = generate_natural_response_by_llm(original_question, result_records)
 
-    print(f"--- Raw Generated Response (final_text): {final_text}") # 调试信息 <--- 检查这里！
-
     # Step 6: 翻译推荐结果为英文（如果输入是英文）
-    if is_english:
-        final_text_en = translate_to_english_by_llm(final_text)
-    else:
-        final_text_en = final_text
+    final_text_en = translate_to_english_by_llm(final_text) if not is_chinese else final_text
 
     print(" 翻译后文本：", question)
     print("📤 待翻译自然语言推荐语：", final_text)
@@ -432,6 +403,5 @@ async def recommend(request: RecommendRequest):
         cypher=cypher_query,
         graphResults=graph_results,
         finalText=final_text_en,
-        translatedInput=question if is_english else "",  # 非英文不显示
-        isRecommendation=bool(result_records)    
+        translatedInput=question if is_english else ""  # 非英文不显示
     )

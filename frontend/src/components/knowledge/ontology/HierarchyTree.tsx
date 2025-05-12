@@ -3,6 +3,8 @@
 import { useRef, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { OntologyNode } from "./OntologyTree";
+import { useTranslation } from "react-i18next";
+
 
 // 动态加载 d3 tree
 const Tree = dynamic(() => import("react-d3-tree").then(mod => mod.Tree), { ssr: false });
@@ -14,6 +16,7 @@ interface Props {
 const HierarchyTree: React.FC<Props> = ({ data }) => {
   const [treeData, setTreeData] = useState<any[]>([]);
   const [hideLeaves, setHideLeaves] = useState(false); // 控制是否隐藏最深层
+  const { t } = useTranslation("common");
 
   const containerRef = useRef(null);
 
@@ -81,7 +84,7 @@ const HierarchyTree: React.FC<Props> = ({ data }) => {
           renderCustomNodeElement={renderCustomNode}
         />        
         ) : (
-          <p className="text-gray-500">⚠️ 没有解析到本体层级结构</p>
+          <p className="text-gray-500">{t("hierarchy.noData")}</p>
         )}
       </div>
     </div>

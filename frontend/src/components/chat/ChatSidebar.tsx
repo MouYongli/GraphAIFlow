@@ -1,6 +1,8 @@
 "use client";
-
 import React from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next"; // ✅ 使用 i18next 包自带实例
+// ✅ 加这个
 import { Lightbulb, FolderTree } from "lucide-react";
 import { Menu } from "antd";
 import type { MenuProps } from "antd";
@@ -20,8 +22,9 @@ interface ChatSidebarProps {
 const ChatSidebar: React.FC<ChatSidebarProps> = ({ sidebarOpen, toggleSidebar }) => {
   const router = useRouter();
   const collapsed = !sidebarOpen;
+  const { t } = useTranslation("common");
 
-  // ✅ 保存当前聊天记录
+  //  保存当前聊天记录
   const saveToHistory = () => {
     const chatHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
     const currentChat = JSON.parse(localStorage.getItem("currentChat") || "[]");
@@ -33,27 +36,27 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ sidebarOpen, toggleSidebar })
     }
   }
 
-  // ✅ 侧边栏菜单项
+  //  侧边栏菜单项
   const items: MenuProps["items"] = [
     {
       key: "chats",
       icon: <BulbOutlined />,
-      label: "Chat",
+      label: t("sidebar.chat.title"),
       children: [
         {
           key: "mychat",
-          label: "MyChat",
+          label: t("sidebar.chat.mychat"),
           icon: <Lightbulb />,
           onClick: () => {
-            saveToHistory(); // ✅ 先保存当前聊天记录
-            router.push("/chat/MyChat"); // ✅ 然后跳转到 MyChat
+            saveToHistory(); //  先保存当前聊天记录
+            router.push("/chat/MyChat"); //  然后跳转到 MyChat
           },
         },
         {
           key: "history",
-          label: "History",
+          label: t("sidebar.chat.history"),
           icon: <FolderTree />,
-          onClick: () => router.push("/chat/history"), // ✅ 直接跳转到历史聊天页面
+          onClick: () => router.push("/chat/history"), //  直接跳转到历史聊天页面
         },
       ],
     },
@@ -70,7 +73,7 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ sidebarOpen, toggleSidebar })
       </div>
 
       {/* 菜单 */}
-      <Menu mode="inline" theme="dark" inlineCollapsed={collapsed} items={items} className="flex-1" />
+      <Menu key={i18n.language} mode="inline" theme="dark" inlineCollapsed={collapsed} items={items} className="flex-1" />
     </div>
   );
 };

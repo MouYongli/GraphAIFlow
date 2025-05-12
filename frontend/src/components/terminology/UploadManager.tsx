@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import UploadFile from "./UploadFile";
 import FileList from "./FileList";
 import Candidate from "./Candidate";
+import { useTranslation } from "react-i18next";
+
 
 interface UploadManagerProps {
   onTermsExtracted?: (terms: string[]) => void;
@@ -21,7 +23,7 @@ export default function UploadManager({
   const [terms, setTerms] = useState<string[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
+  const { t } = useTranslation("common");
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setShowDropdown(true);
@@ -73,7 +75,7 @@ export default function UploadManager({
         onClick={onSuggestClick}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-fit"
       >
-        ✨ 获取智能建议
+        ✨ {t("terminology.suggest_button")}
       </button>
     </div>
   );

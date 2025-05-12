@@ -11,63 +11,58 @@ const ChatHistoryDetail = () => {
 
   useEffect(() => {
     const chatHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
-    const chatSession = chatHistory.find((chat: any) => chat.id === Number(id));
+    const chatSession = chatHistory.find((chat: any) => chat.id === id); // ✅ 直接比较字符串
     setMessages(chatSession ? chatSession.messages : []);
   }, [id]);
 
-  // 滚动到底部
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   const sendMessage = async () => {
     if (inputValue.trim() === "") return;
-  
+
     const userMessage = {
       id: messages.length + 1,
       text: inputValue,
       sender: "user",
     };
-  
+
     const updatedMessages = [...messages, userMessage];
     setMessages(updatedMessages);
     setInputValue("");
-  
+
     try {
       const res = await fetch("http://localhost:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           content: inputValue,
-          chat_history: updatedMessages
-            .slice(0, updatedMessages.length - 1)
-            .map((msg) => ({
-              role: msg.sender === "user" ? "user" : "assistant",
-              content: msg.text,
-            })),
+          chat_history: updatedMessages.slice(0, -1).map((msg) => ({
+            role: msg.sender === "user" ? "user" : "assistant",
+            content: msg.text,
+          })),
         }),
       });
-  
+
       const data = await res.json();
       const botMessage = {
         id: userMessage.id + 1,
         text: data.reply || "🤖 出现错误，未返回有效回复。",
         sender: "bot",
       };
-  
+
       const finalMessages = [...updatedMessages, botMessage];
       setMessages(finalMessages);
-  
-      // ✅ 保存回 chatHistory 中该条记录
+
       const chatHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
       const updatedChatHistory = chatHistory.map((chat: any) => {
-        if (chat.id === Number(id)) {
+        if (chat.id === id) { // ✅ 修正为字符串比较
           return { ...chat, messages: finalMessages };
         }
         return chat;
       });
       localStorage.setItem("chatHistory", JSON.stringify(updatedChatHistory));
-  
     } catch (error) {
       const errorMessage = {
         id: userMessage.id + 1,
@@ -76,11 +71,10 @@ const ChatHistoryDetail = () => {
       };
       const finalMessages = [...updatedMessages, errorMessage];
       setMessages(finalMessages);
-  
-      // ❗ 失败时也保存错误消息回历史记录
+
       const chatHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
       const updatedChatHistory = chatHistory.map((chat: any) => {
-        if (chat.id === Number(id)) {
+        if (chat.id === id) {
           return { ...chat, messages: finalMessages };
         }
         return chat;
@@ -88,7 +82,6 @@ const ChatHistoryDetail = () => {
       localStorage.setItem("chatHistory", JSON.stringify(updatedChatHistory));
     }
   };
-  
 
   return (
     <div className="max-w-4xl mx-auto p-6 flex flex-col h-[90vh]">

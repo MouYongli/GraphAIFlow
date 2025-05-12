@@ -4,6 +4,7 @@ interface InputProps {
   value: string;
   onChange: (value: string) => void;
   onSend?: () => void;  // ✅ 新增回车发送回调
+  placeholder?: string;
 }
 
 const Input: React.FC<InputProps> = ({ value, onChange, onSend }) => {

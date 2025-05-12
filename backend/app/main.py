@@ -4,6 +4,7 @@ from app.routers import file_manager, ontology, terminology_upload, processing_u
 from app.routers import chat_api
 from app.routers import recommendation_api
 from app.routers import kg_api  # ← 导入新模块
+from app.routers import test_together_llama33
 
 
 
@@ -24,6 +25,7 @@ app.add_middleware(
 
 #uvicorn app.main:app --reload
 # 运行项目
+app.include_router(test_together_llama33.router)
 app.include_router(recommendation_api.router)
 app.include_router(file_manager.router, prefix="/api/files", tags=["files"])
 app.include_router(ontology.router, prefix="/api/ontology", tags=["ontology"])
