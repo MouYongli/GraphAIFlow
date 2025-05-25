@@ -7,7 +7,7 @@ interface Suggestion {
   term: string;
   type: string;
   suggested_class: string;
-  reasoning: string; // 实际是 JSON 字符串（数组）
+  reasoning: string;
 }
 
 interface FlattenedSuggestion {
@@ -20,8 +20,6 @@ interface FlattenedSuggestion {
 interface Props {
   suggestions: Suggestion[];
   onAdd: (item: FlattenedSuggestion) => void;
-
-  // ✅ 新增参数：已有的本体类/关系
   existingClasses: string[];
   existingProperties: string[];
 }
@@ -34,7 +32,7 @@ export default function OntologySuggestionPanel({
 }: Props) {
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const { t } = useTranslation("common");
-  // ✨ 清洗 JSON 字符串
+
   const safeParseJSON = (input: any): any => {
     let result = input;
     if (typeof result === "string") {
@@ -50,7 +48,6 @@ export default function OntologySuggestionPanel({
     return result;
   };
 
-  // ✅ 判断是否为本体中已有的类或关系
   const isNewTerm = (term: string): boolean => {
     return !existingClasses.includes(term) && !existingProperties.includes(term);
   };
@@ -123,9 +120,31 @@ export default function OntologySuggestionPanel({
       }
     }
 
-    alert(`✅ 成功加入本体：${toAdd.map((t) => t.term).join(", ")}`);
+    alert(`30 成功加入本体：${toAdd.map((t) => t.term).join(", ")}`);
     setSelected(new Set());
   };
+
+  // ✨ 新增：展示 Error 类型的建议为大框
+  if (
+    suggestions.length === 1 &&
+    suggestions[0].type === "Error"
+  ) {
+    const raw = suggestions[0].reasoning || "";
+    const cleaned = raw
+      .replace(/<think>[\s\S]*?<\/think>/g, "") // 删除 <think> 标签内容
+      .replace(/\*{1,2}/g, "") // 删除 * 和 **
+      .trim();
+
+    return (
+      <div className="border border-red-300 bg-red-50 rounded shadow-inner p-2">
+        <div className="max-h-[500px] overflow-y-auto whitespace-pre-wrap text-sm leading-relaxed p-4 text-gray-800 font-sans bg-white rounded">
+          {cleaned}
+        </div>
+      </div>
+    );
+
+  }
+
 
   return (
     <div className="mt-6">
@@ -136,7 +155,7 @@ export default function OntologySuggestionPanel({
           <table className="w-full text-sm table-fixed border border-gray-300">
             <thead className="bg-gray-100">
               <tr>
-                <th className="w-10 p-2 border text-center">✅</th>
+                <th className="w-10 p-2 border text-center">30</th>
                 <th className="w-24 p-2 border">术语</th>
                 <th className="w-24 p-2 border">类型</th>
                 <th className="w-32 p-2 border">推荐分类</th>
@@ -159,8 +178,10 @@ export default function OntologySuggestionPanel({
                   <td className="p-2 border text-blue-600">
                     {item.suggested_class || "（无）"}
                   </td>
-                  <td className="p-2 border text-gray-700 break-words whitespace-pre-wrap">
-                    {item.reasoning}
+                  <td className="p-2 border text-gray-700 align-top">
+                    <div className="max-h-60 overflow-y-auto whitespace-pre-wrap text-sm leading-relaxed px-2 py-1 rounded bg-white shadow-inner">
+                      {item.reasoning}
+                    </div>
                   </td>
                   <td className="p-2 text-center border">
                     <button
@@ -175,14 +196,7 @@ export default function OntologySuggestionPanel({
             </tbody>
           </table>
 
-          <div className="text-right mt-4">
-            <button
-              onClick={handleAddSelected}
-              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-              ✅ 批量加入选中术语
-            </button>
-          </div>
+    
         </>
       )}
     </div>

@@ -3,15 +3,15 @@ import React, { KeyboardEvent } from "react";
 interface InputProps {
   value: string;
   onChange: (value: string) => void;
-  onSend?: () => void;  // ✅ 新增回车发送回调
+  onSend?: () => void;
   placeholder?: string;
 }
 
-const Input: React.FC<InputProps> = ({ value, onChange, onSend }) => {
+const Input: React.FC<InputProps> = ({ value, onChange, onSend, placeholder }) => {
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === "Enter") {
       e.preventDefault();
-      onSend?.(); // 调用发送方法
+      onSend?.(); // ⏎ 直接发送
     }
   };
 
@@ -19,10 +19,10 @@ const Input: React.FC<InputProps> = ({ value, onChange, onSend }) => {
     <input
       type="text"
       className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-      placeholder="Enter your message..."
+      placeholder={placeholder || "请输入你的问题..."}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      onKeyDown={handleKeyDown} // ✅ 回车事件绑定
+      onKeyDown={handleKeyDown} // 绑定键盘事件
     />
   );
 };

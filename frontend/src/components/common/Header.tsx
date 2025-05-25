@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
       {/* 左侧 Logo */}
-      <div className="text-xl font-bold">MyLogo</div>
+      <div className="text-xl font-bold">TourRec</div>
 
       {/* 中间的导航 */}
       <Nav />

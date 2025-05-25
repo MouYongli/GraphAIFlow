@@ -38,29 +38,23 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ sidebarOpen, toggleSidebar })
 
   //  侧边栏菜单项
   const items: MenuProps["items"] = [
-    {
-      key: "chats",
-      icon: <BulbOutlined />,
-      label: t("sidebar.chat.title"),
-      children: [
-        {
-          key: "mychat",
-          label: t("sidebar.chat.mychat"),
-          icon: <Lightbulb />,
-          onClick: () => {
-            saveToHistory(); //  先保存当前聊天记录
-            router.push("/chat/MyChat"); //  然后跳转到 MyChat
-          },
-        },
-        {
-          key: "history",
-          label: t("sidebar.chat.history"),
-          icon: <FolderTree />,
-          onClick: () => router.push("/chat/history"), //  直接跳转到历史聊天页面
-        },
-      ],
+  {
+    key: "mychat",
+    label: t("sidebar.chat.mychat"),
+    icon: <Lightbulb />,
+    onClick: () => {
+      saveToHistory();
+      router.push("/chat/MyChat");
     },
-  ];
+  },
+  {
+    key: "history",
+    label: t("sidebar.chat.history"),
+    icon: <FolderTree />,
+    onClick: () => router.push("/chat/history"),
+  },
+];
+
 
   return (
     <div className={`h-screen bg-gray-800 text-white flex flex-col transition-all duration-300 ${collapsed ? "w-16" : "w-64"}`}>

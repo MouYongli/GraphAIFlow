@@ -29,7 +29,7 @@ def get_kg_graph():
     with driver.session() as session:
         result = session.run("""
             MATCH (n)-[r]->(m)
-            RETURN n, r, m LIMIT 100
+            RETURN n, r, m LIMIT 1000
         """)
         data = []
         for record in result:
@@ -164,7 +164,7 @@ Prompt 要求：
         if full_content.startswith("```json"):
             full_content = full_content.replace("```json", "").replace("```", "").strip()
 
-        # ✅ 关键新增！！只提取 [] 里的数组
+        #  关键新增！！只提取 [] 里的数组
         match = re.search(r"\[\s*{.*}\s*\]", full_content, re.DOTALL)
         if match:
             clean_json = match.group()

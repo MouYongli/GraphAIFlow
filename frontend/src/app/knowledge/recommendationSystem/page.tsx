@@ -13,8 +13,12 @@ export default function RecommendationPage() {
   const [graphResults, setGraphResults] = useState<string[]>([]);
   const [finalRecommendation, setFinalRecommendation] = useState('');
   const [translatedInput, setTranslatedInput] = useState('');
+  const [usedEntities, setUsedEntities] = useState<any[]>([]);
+
 
   const { t } = useTranslation("common");
+  const [lang, setLang] = useState('zh'); // 默认中文，可选 'zh' | 'en'
+
   const handleGenerate = async () => {
     const res = await fetch('http://localhost:8000/api/recommend', {
       method: 'POST',
@@ -22,7 +26,7 @@ export default function RecommendationPage() {
       body: JSON.stringify({
         question: userInput,
         prompt: promptInput,
-        lang: 'en', // ✅ 临时写死为中文，如果你未来想支持英文再改
+        lang: lang, // ✅ 临时写死为中文，如果你未来想支持英文再改
         model_name: 'deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free' // ✅ 模型名称
       })
     });
@@ -34,6 +38,8 @@ export default function RecommendationPage() {
     setGraphResults(Array.isArray(data.graphResults) ? data.graphResults : []);
     setFinalRecommendation(data.finalText);
     setTranslatedInput(data.translatedInput || "");
+    setUsedEntities(Array.isArray(data.usedEntities) ? data.usedEntities : []);
+
   };
 
 
@@ -43,6 +49,19 @@ export default function RecommendationPage() {
         {/* 用户输入推荐意图 */}
         <div>
           <label className="font-semibold">{t("rec.input_label")}</label>
+          {/* 语言选择器 */}
+          <div className="mt-3 flex items-center">
+            <label className="font-semibold mr-2">语言选择 / Language:</label>
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+              className="border rounded px-2 py-1"
+            >
+              <option value="zh">中文</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
           <textarea
             className="mt-2 w-full border border-gray-400 rounded p-2"
             rows={3}
@@ -62,6 +81,7 @@ export default function RecommendationPage() {
               placeholder={t("rec.prompt_placeholder")}
             />
           </div>
+          
 
           <button
             onClick={handleGenerate}
@@ -97,14 +117,83 @@ export default function RecommendationPage() {
         </div>
 
         {/* 查询结果展示 */}
+        {/* 查询结果展示（可折叠） */}
+        {/* 模块 A：候选实体（默认展示前10条） */}
         <div>
-          <h3 className="font-semibold">{t("rec.graph_results_title")}</h3>
-          <ul className="list-disc pl-6 text-sm text-gray-700">
-            {graphResults.length > 0 ? graphResults.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            )) : <li>{t("rec.graph_waiting")}</li>}
-          </ul>
+          <h3 className="font-semibold mb-2">{t("rec.graph_results_candidates")}</h3>
+          {graphResults.length === 0 ? (
+            <div className="text-sm text-gray-500"> {t("rec.graph_waiting")} </div>
+          ) : (
+            <div className="space-y-2">
+              {graphResults.slice(0, 3).map((item, idx) => (
+                <pre
+                  key={idx}
+                  className="border rounded px-3 py-2 text-sm text-gray-800 bg-gray-50 whitespace-pre-wrap"
+                >
+                  {item}
+                </pre>
+              ))}
+
+              {graphResults.length > 3 && (
+                <details className="border border-gray-300 rounded mt-2">
+                  <summary className="cursor-pointer px-3 py-2 bg-gray-100 hover:bg-gray-200 text-sm text-blue-700">
+                    🔽 {t("rec.show_more_results", { count: graphResults.length - 3 })}
+                  </summary>
+                  <div className="p-3 space-y-2">
+                    {graphResults.slice(3).map((item, idx) => (
+                      <pre
+                        key={idx + 3}
+                        className="border rounded px-3 py-2 text-sm text-gray-700 bg-white whitespace-pre-wrap"
+                      >
+                        {item}
+                      </pre>
+                    ))}
+                  </div>
+                </details>
+              )}
+            </div>
+          )}
         </div>
+
+        {/* 模块 B：实际使用的实体 */}
+        {usedEntities && usedEntities.length > 0 && (
+          <div className="mt-6">
+            <h3 className="font-semibold mb-2">{t("rec.graph_results_used")}</h3>
+            <div className="space-y-2">
+              {/* 显示前 5 条 */}
+              {usedEntities.slice(0, 5).map((ent, idx) => (
+                <pre
+                  key={idx}
+                  className="border rounded px-3 py-2 text-sm text-gray-800 bg-gray-50 whitespace-pre-wrap"
+                >
+                  {JSON.stringify(ent, null, 2)}
+                </pre>
+              ))}
+
+              {/* 折叠显示剩余的 */}
+              {usedEntities.length > 5 && (
+                <details className="border border-gray-300 rounded mt-2">
+                  <summary className="cursor-pointer px-3 py-2 bg-gray-100 hover:bg-gray-200 text-sm text-blue-700">
+                    🔽 {t("rec.show_more_results", { count: usedEntities.length - 5 })}
+                  </summary>
+                  <div className="p-3 space-y-2">
+                    {usedEntities.slice(5).map((ent, idx) => (
+                      <pre
+                        key={idx + 5}
+                        className="border rounded px-3 py-2 text-sm text-gray-700 bg-white whitespace-pre-wrap"
+                      >
+                        {JSON.stringify(ent, null, 2)}
+                      </pre>
+                    ))}
+                  </div>
+                </details>
+              )}
+            </div>
+          </div>
+        )}
+
+
+
 
         {/* 最终推荐语句 */}
         <div>

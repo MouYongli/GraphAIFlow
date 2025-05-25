@@ -13,8 +13,10 @@ interface Message {
 interface SUSDetail {
   chat_id: string;
   sus_score: number;
-  detail_scores?: number[]; // ✅ 加入字段
+  detail_scores?: number[];
+  suggestion?: string; // ✅ 新增字段
 }
+
 
 export default function SurveyDetailPage() {
   const { chat_id } = useParams();
@@ -30,18 +32,25 @@ export default function SurveyDetailPage() {
 
     const loadData = async () => {
       try {
-        const [chatRes, susRes] = await Promise.all([
-          fetch(`http://localhost:8000/api/chat/load/${chat_id}`),
-          fetch(`http://localhost:8000/api/chat/survey/${chat_id}`),
-        ]);
+        // ✅ 尝试从 localStorage 加载完整聊天记录
+        const localHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
+        const localChat = localHistory.find((c: any) => c.id === chat_id);
 
-        const chatData = await chatRes.json();
+        if (localChat && Array.isArray(localChat.messages)) {
+          setMessages(localChat.messages);
+        } else {
+          // ✅ fallback：调用后端接口（兼容之前的行为）
+          const chatRes = await fetch(`http://localhost:8000/api/chat/load/${chat_id}`);
+          const chatData = await chatRes.json();
+          setMessages(chatData || []);
+        }
+
+        // SUS 分数正常加载
+        const susRes = await fetch(`http://localhost:8000/api/chat/survey/${chat_id}`);
         const susData = await susRes.json();
-
-        setMessages(chatData || []);
         setSus(susData || null);
       } catch (error) {
-        console.error('❌ 加载数据失败:', error);
+        console.error("❌ 加载数据失败:", error);
       } finally {
         setLoading(false);
       }
@@ -49,6 +58,7 @@ export default function SurveyDetailPage() {
 
     loadData();
   }, [chat_id]);
+
 
   if (loading) {
     return <div className="p-6">加载中...</div>;
@@ -91,6 +101,14 @@ export default function SurveyDetailPage() {
                 ))}
               </div>
             )}
+
+            {sus.suggestion && (
+              <div className="mt-6">
+                <p className="font-medium">用户反馈意见：</p>
+                <p className="text-gray-700 whitespace-pre-line">{sus.suggestion}</p>
+              </div>
+            )}
+
           </>
         ) : (
           <p>暂无 SUS 问卷记录</p>

@@ -5,6 +5,9 @@ from app.routers import chat_api
 from app.routers import recommendation_api
 from app.routers import kg_api  # ← 导入新模块
 from app.routers import test_together_llama33
+from app.routers import list  # 导入你刚创建的 list.py 模块
+
+
 
 
 
@@ -23,8 +26,10 @@ app.add_middleware(
 )
 
 
+
 #uvicorn app.main:app --reload
 # 运行项目
+app.include_router(list.router)  # 注册这个 router
 app.include_router(test_together_llama33.router)
 app.include_router(recommendation_api.router)
 app.include_router(file_manager.router, prefix="/api/files", tags=["files"])

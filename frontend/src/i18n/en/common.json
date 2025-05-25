@@ -1,14 +1,18 @@
 {
+  
   "home": {
-    "welcome": "Welcome to TouRec",
+    "welcome": "Welcome to TourRec",
     "slogan": "Your Intelligent Tourism Information Searching Helper",
-    "chat_button": "Chat With Me",
+    "chat_button": "Chat with me",
+    "why_title": "Why TouRec?",
+    "why_desc": "After visa-free policy, more tourists are visiting China. However, due to language barriers, it's often difficult to access local travel tips from a native perspective. TouRec uses real Xiaohongshu content to build a knowledge graph, helping you receive authentic and personalized travel suggestions — in your own language.",
+    "features_title": "System Highlights",
     "section_1": "Attraction Connections",
-    "section_1_desc": "Discover how different attractions are linked",
+    "section_1_desc": "Explore how different attractions are related and design personalized routes",
     "section_2": "Smart Recommendations",
-    "section_2_desc": "Get the best travel time suggestions",
+    "section_2_desc": "Discover the best timing and activity suggestions powered by real user data",
     "section_3": "User Feedback",
-    "section_3_desc": "Read authentic reviews from real users"
+    "section_3_desc": "Learn from authentic reviews to avoid tourist traps and make informed decisions"
   },
   "chat": {
     "title": "Chat with AI",
@@ -63,8 +67,8 @@
     "kg_construction": "KG Construction",
     "processing": "Processing",
     "recommendation": "Recommendation System",
-    "recommendation_pipeline": "Pipeline",
-    "chat_interface": "Chat Interface"
+    "recommendation_pipeline": "Pipeline Model",
+    "chat_interface": "Chat Model"
 
   }
   },
@@ -105,6 +109,7 @@
 }
 ,
 "rec": {
+  "rec.show_more_results": "Show {{count}}more results",
   "input_label": "Enter your recommendation query:",
   "input_placeholder": "e.g., I want to enjoy flowers and food in Beijing during spring.",
   "prompt_label": "Prompt instruction (LLM guiding)",
@@ -117,7 +122,10 @@
   "graph_results_title": "Graph Query Results (Candidates)",
   "graph_waiting": "Waiting for query results...",
   "final_title": "Final Recommendation (Natural Language)",
-  "final_empty": "No recommendation generated"
+  "final_empty": "No recommendation generated",
+  "graph_results_candidates": "Graph Query Results (Candidates)",
+  "graph_results_used": "Used Entities in Final Recommendation",
+  "show_more_results": "Show {{count}} more candidates"
 }
 ,
   "ontology": {
@@ -165,21 +173,29 @@
 "SUS_CHAT_ID": "Current Chat ID",
 "SUS_INTRO": "Based on your experience, please rate each item from 1 to 5",
 "SUS_QUESTION_PREFIX": "Q",
-"SUS_THANKS": "✅ Thank you! Your response has been recorded.",
+"SUS_THANKS": " Thank you! Your response has been recorded.",
 "SUS_SUBMIT": "Submit Survey",
 "SUS_SELECT_PLACEHOLDER": "Please select...",
 "SUS_ALERT": "Please complete all scores!",
 "SUS_QUESTIONS": [
-  "I think that I would like to use this system frequently.",
-  "I found the system unnecessarily complex.",
-  "I thought the system was easy to use.",
-  "I think that I would need the support of a technical person to use this system.",
-  "I found the various functions in this system were well integrated.",
-  "I thought there was too much inconsistency in this system.",
-  "I would imagine that most people would learn to use this system very quickly.",
-  "I found the system very cumbersome to use.",
-  "I felt very confident using the system.",
-  "I needed to learn a lot of things before I could get going with this system."
+    "Do you find this system easy to use?",
+    "Is this system easy to understand?",
+    "Do you think the system behaves consistently?",
+    "Do you think most people can quickly learn to use this system?",
+    "Is the design of the system reasonable and well-structured?",
+    "Do you feel that all the features of the system are complete?",
+     "Is the system coherent and logically organized?",
+    "Do you think most users will learn to use it quickly?",
+    "You don't need to learn a lot before using this system.",
+    "Does the system’s recommendation meet your needs?",
+     "Do you understand the reasoning behind the system’s recommendations?",
+    "Do you trust the content recommended by the system?",
+     "Do you think the system is intelligent enough?",
+    "Do you consider this system to be innovative?",
+    "Do you think the system is worth using in the long run?",
+    "Would you recommend this system to others?",
+    "Please leave any additional comments or suggestions you have:"
+
 ]
 
 }

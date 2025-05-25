@@ -41,7 +41,29 @@ def chat_with_ai(request: ChatRequest):
         note_id="frontend_chat",
         chat_history=request.chat_history
     )
-    return {"reply": reply}
+
+    # 🆕 加入保存逻辑
+    from datetime import datetime
+    import uuid
+
+    # 获取 chat_id，如果前端没传，就自动生成
+    chat_id = None
+    if request.chat_history and len(request.chat_history) > 0:
+        # 复用第一条记录的 ID 或内容哈希（你也可以从前端传 chat_id 过来）
+        chat_id = request.chat_history[0].content[:30].replace(" ", "_")  # 简单 fallback
+    else:
+        chat_id = f"frontend_chat_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:4]}"
+
+    messages = request.chat_history or []
+    messages.append({"role": "user", "content": request.content})
+    messages.append({"role": "bot", "content": reply})
+
+    os.makedirs("logs/chat", exist_ok=True)
+    with open(f"logs/chat/{chat_id}.json", "w", encoding="utf-8") as f:
+        json.dump(messages, f, ensure_ascii=False, indent=2)
+
+    return {"reply": reply, "chat_id": chat_id}
+
 
 @router.post("/chat/clear")
 def clear_chat_history():
@@ -58,6 +80,7 @@ async def suggest_ontology_update(request: Request):
     body = await request.json()
     terms = body.get("terms", [])
     ontology_text = body.get("ontology", "")
+    model_name = body.get("model_name", "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free")
 
     if not terms or not ontology_text:
         return {"error": "术语列表或本体结构缺失"}
@@ -65,7 +88,7 @@ async def suggest_ontology_update(request: Request):
     prompt = build_prompt_for_terminology_suggestion(terms, ontology_text)
 
     try:
-        result_text = call_chat_api(prompt, note_id="terminology_suggestion")
+        result_text = call_chat_api(prompt, note_id="terminology_suggestion", model_name=model_name)
         suggestions = json.loads(result_text)
     except json.JSONDecodeError:
         suggestions = [{
@@ -75,7 +98,6 @@ async def suggest_ontology_update(request: Request):
             "reasoning": result_text
         }]
     except Exception as e:
-        #  捕获模型接口异常，并返回详细提示
         return {
             "result": [{
                 "term": "模型调用失败",
@@ -150,20 +172,22 @@ async def get_chat_summary():
 def save_sus_result(data: dict):
     chat_id = data.get("chat_id")
     detail_scores = data.get("detail_scores", [])
+    suggestion = data.get("suggestion", "")  #  接收 suggestion 字段
 
     if not chat_id or not detail_scores:
         raise HTTPException(status_code=400, detail="缺少 chat_id 或 detail_scores")
 
-    # ✅ 计算平均分
-    avg_score = round(sum(detail_scores) / 10, 2)
+    #  计算平均分（仍基于前10题）
+    avg_score = round(sum(detail_scores[:10]) / 10, 2)
 
     folder = "logs/chat_survey"
     os.makedirs(folder, exist_ok=True)
     with open(os.path.join(folder, f"{chat_id}_sus.json"), "w", encoding="utf-8") as f:
         json.dump({
             "chat_id": chat_id,
-            "sus_score": avg_score,          # ✅ 保存的是平均分了
-            "detail_scores": detail_scores
+            "sus_score": avg_score,
+            "detail_scores": detail_scores,
+            "suggestion": suggestion   #  保存建议内容
         }, f, ensure_ascii=False)
 
     return {"message": "问卷已保存"}
@@ -236,7 +260,31 @@ def save_rating(data: dict):
 
     return {"message": "评分已保存"}
 
+@router.delete("/chat/survey/{chat_id}")
+def delete_survey_record(chat_id: str):
+    folder = "logs/chat_survey"
+    file_path = os.path.join(folder, f"{chat_id}_sus.json")
 
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        return {"message": f"SUS survey for {chat_id} deleted."}
+    else:
+        raise HTTPException(status_code=404, detail="Survey record not found")
+
+@router.delete("/chat/rating_delete/{chat_id}")
+def delete_rating_record(chat_id: str):
+    file_path = os.path.join("logs/chat", "rating_log.jsonl")
+    if not os.path.exists(file_path):
+        return {"message": "rating log not found"}
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    filtered = [line for line in lines if f'"chat_id": "{chat_id}"' not in line]
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.writelines(filtered)
+
+    return {"message": f"Ratings for {chat_id} deleted."}
 
 
 @router.get("/chat/ratings/{chat_id}")

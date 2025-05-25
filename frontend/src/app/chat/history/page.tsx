@@ -17,12 +17,13 @@ const formatChatId = (date: Date) => {
 
 // ✅ chatId 转 readable 中文时间
 const parseReadableTime = (chatId: string) => {
-  const match = chatId.match(/frontend_chat_(\d{8})_(\d{6})/);
+  const match = chatId.match(/frontend_chat_(\d{8})_(\d{6})(?:_\d{4})?/);
   if (!match) return chatId;
 
   const [_, date, time] = match;
   return `${date.slice(0, 4)}/${date.slice(4, 6)}/${date.slice(6, 8)} ${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`;
 };
+
 
 interface ChatRecord {
   id: string;

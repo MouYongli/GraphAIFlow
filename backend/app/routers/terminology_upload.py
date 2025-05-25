@@ -20,7 +20,7 @@ async def upload_terminology_file(
     file: UploadFile = File(...),
     save: bool = Form(False)
 ):
-    if not file.filename.endswith(('.xlsx', '.csv')):  # ✅ 删除 .json 支持
+    if not file.filename.endswith(('.xlsx', '.csv')):  # 删除 .json 支持
         raise HTTPException(status_code=400, detail="仅支持 .xlsx 和 .csv 文件")
 
     content = await file.read()
@@ -59,7 +59,7 @@ def get_columns(filename: str):
 
 @router.get("/extract")
 def extract_terms_route(filename: str):
-    file_path = os.path.join(UPLOAD_DIR, filename)  # ✅ 改为上传目录
+    file_path = os.path.join(UPLOAD_DIR, filename)  # 30 改为上传目录
     try:
         terms = terminology_extractor.extract_terms(file_path)
         return {"candidates": terms}

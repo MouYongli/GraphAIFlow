@@ -13,7 +13,8 @@ export default function Nav() {
     { name: "Chat", href: "/chat", key: "chat" },
     { name: "Knowledge", href: "/knowledge", key: "knowledge" },
     { name: "Studio", href: "/studio", key: "studio" },
-    { name: "Setting", href: "/setting", key: "setting" },  //  新增 Setting
+    { name: "Setting", href: "/setting", key: "setting" }, 
+    { name: "Setting", href: "/data", key: "data" }, //  新增 Setting
   ], []);
 
   const selectedKey = React.useMemo(() => {

@@ -12,6 +12,24 @@ router = APIRouter()
 class TestRequest(BaseModel):
     model: str
     prompt: str
+    # backend/app/routers/test_together_llama33.py
+
+async def call_llm(prompt: str, model: str = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free") -> str:
+    client = Together(api_key=os.getenv("TOGETHER_API_KEY"))
+
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": "你是一个结构化信息抽取助手"},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.1,
+        max_tokens=512,
+        seed=42
+    )
+
+    return response.choices[0].message.content
+
 
 @router.post("/api/test_together")
 def test_together_model(request: TestRequest):
