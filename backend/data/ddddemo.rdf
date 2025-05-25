@@ -1,0 +1,906 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/"
+     xml:base="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:untitled-ontology-36="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityassociatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityassociatedWith">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasActivity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#HoldOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#HoldOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#LocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#LocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#has"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#feature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#feature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isFeatureOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#has">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasRecommendCuisine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasRecommendCuisine">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#RecommendCuisine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasReviewAndFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#hasReviewAndFeedback">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isAbout"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isAbout">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#isFeatureOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#istheBestTimeFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#istheBestTimeFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#suitableForTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#suitableForTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#suitableForTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Content -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Content">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#EntryFee -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#EntryFee">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#GeographicalScope -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#GeographicalScope">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#OpeningHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#OpeningHours">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CateringIndustry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#PopularityScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#PopularityScore">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#PriceRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#PriceRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Rating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Source">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpecialDish -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpecialDish">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Timestamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Type">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#African_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#African_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Buffet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Buffet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Cantonese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Cantonese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CateringIndustry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CateringIndustry">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Coffee_Shop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Coffee_Shop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Crayfish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Crayfish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Creative_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Creative_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CulturalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Drink_Shop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Drink_Shop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#EntertainmentActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#EntertainmentActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Grilled_Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Grilled_Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Home-style_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Home-style_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Hotpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Hotpot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Hunan_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Hunan_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Japanese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Japanese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Korean_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Korean_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Location">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Middle_Eastern_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Middle_Eastern_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Noodle_Shops -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Noodle_Shops">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Northeastern_Chinese_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Northeastern_Chinese_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Other_Cuisines -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Other_Cuisines">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#OutdoorActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#OutdoorActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Period -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Period">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Private_Kitchen_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Private_Kitchen_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#RecommendCuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#RecommendCuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CateringIndustry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#CateringIndustry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ReviewAndFeedback">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Russian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Russian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Seafood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Seafood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Season">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Sichuan_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Sichuan_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Snail_Rice_Noodles -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Snail_Rice_Noodles">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Southeast_Asian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Southeast_Asian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Specialty_Dishes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Specialty_Dishes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpecificTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpecificTime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Time">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Vegetarian_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Vegetarian_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Western_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Western_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Xinjiang_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Xinjiang_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#BBQ_&amp;_Skewers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#BBQ_&amp;_Skewers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Bakery_&amp;_Desserts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Bakery_&amp;_Desserts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Dim_Sum_&amp;_Morning_Tea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Dim_Sum_&amp;_Morning_Tea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Fresh_Fruits_&amp;_Produce -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Fresh_Fruits_&amp;_Produce">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Health_&amp;_Nutritional_Foods -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Health_&amp;_Nutritional_Foods">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Jiangsu_&amp;_Zhejiang_Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Jiangsu_&amp;_Zhejiang_Cuisine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Rice_Noodle_&amp;_Pasta_Shops -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Rice_Noodle_&amp;_Pasta_Shops">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Snacks_&amp;_Fast_Food -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Snacks_&amp;_Fast_Food">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing">
+        <untitled-ontology-36:belongsTo rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#China"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#China -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#China"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Haidilao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Haidilao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <untitled-ontology-36:belongsTo rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Sanlitun"/>
+        <untitled-ontology-36:suitableForTime rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Spring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#HuangpuDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#HuangpuDistrict"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Museum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Museum"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Nanmenshuanrou -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Nanmenshuanrou">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Restaurant"/>
+        <untitled-ontology-36:belongsTo rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Peking_University -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Peking_University"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Sanlitun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Sanlitun">
+        <untitled-ontology-36:LocatedIn rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Beijing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Shichahai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Shichahai"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Spring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Spring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Season"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpringFestival -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpringFestival">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#SpecificTime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Summer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Summer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Season"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ThePalaceMuseum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ThePalaceMuseum"/>
+    
+
+
+    <!-- http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#nighttour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#nighttour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#OutdoorActivity"/>
+        <untitled-ontology-36:suitableForTime rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#Summer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/act">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/time">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/att">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityAndExperience"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/act"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#suitableForTime"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/act"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/time"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#ActivityassociatedWith"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/act"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/att"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36#suitableForTime"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/att"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/susik/ontologies/2024/11/untitled-ontology-36/time"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

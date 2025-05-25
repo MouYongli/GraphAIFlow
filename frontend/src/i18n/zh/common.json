@@ -1,29 +1,213 @@
 {
-    "home": {
-        "title": "TourRec",
-        "subtitle": "一个个性化旅行计划推荐系统",
-        "try_now": "立即体验"
+
+  "home": {
+    "welcome": "欢迎使用 TouRec",
+    "slogan": "您的智能旅游信息搜索助手",
+    "chat_button": "开始对话",
+    "why_title": "为什么是 TouRec？",
+    "why_desc": "在免签政策颁布后,越来越多游客来到中国，但由于语言障碍，难以获取本地人视角的旅行建议。TouRec 基于小红书内容构建知识图谱，让您用自己的语言获取真实、接地气的北京旅游推荐。",
+    "features_title": "系统亮点",
+    "section_1": "景点关联",
+    "section_1_desc": "探索不同景点之间的联系，规划个性化路线",
+    "section_2": "智能推荐",
+    "section_2_desc": "基于小红书数据，生成最适合时机与活动推荐",
+    "section_3": "用户反馈",
+    "section_3_desc": "结合真实评论，帮助您避坑避雷"
+  },
+    "chat": {
+      "title": "智能对话",
+      "clear_button": "清空对话",
+      "send_button": "发送",
+      "placeholder": "请输入你的问题...",
+      "welcome": "👋 哈喽！想看、想吃、想玩什么？告诉我你的兴趣或时间安排，我来推荐北京值得去的地方！",
+      "welcome_back": "👋 欢迎回来！请告诉我你接下来的旅游需求吧～",
+      "no_response": "🤖 未生成推荐结果。",
+      "network_error": "⚠️ 请求失败，请检查网络或后端服务。",
+      "history_title": "聊天记录",
+      "no_history": "暂无聊天记录。",
+      "chat_from": "会话时间",
+      "delete": "删除",
+      "history_detail_title": "聊天详情",
+      "continue_chat": "继续聊天...",
+      "confirm_delete": "确定要删除该聊天记录吗？",
+      "clear": "🗑 清空对话",
+    "end": "✅ 结束对话",
+    "no_result": "🤖 未生成推荐结果。",
+    "request_failed": "⚠️ 请求失败，请检查网络或后端服务。",
+    "select_language": "🌐 请选择语言：",
+    "language": {
+      "zh": "中文",
+      "en": "English"
+    },
+    "select_model": "🤖 选择模型："
     },
     "nav": {
-        "home": "首页",
-        "chat": "对话",
-        "knowledge": "知识库",
-        "studio": "工作室",
-        "dashboard": "仪表盘",
-        "sign_in": "登录"
+      "home": "首页",
+      "chat": "对话",
+      "knowledge": "知识库",
+      "studio": "工作室",
+      "dashboard": "仪表盘",
+      "sign_in": "登录",
+      "setting": "设置"
     },
     "sidebar": {
-        "knowledge": {
-            "title": "知识库",
-            "ontology": {
-                "title": "本体",
-                "subtitle": "查看和编辑知识库的本体"
-            },
-            "graph":
-            {
-                "title": "图",
-                "subtitle": "查看知识图谱"
-            }
-        }
+      "chat": {
+        "title": "对话",
+        "mychat": "我的对话",
+        "history": "历史记录"
+      },
+      "knowledge": {
+        "visualization": "可视化",
+        "ontology": { "title": "本体" },
+        "hierarchy": "层级结构",
+        "graph": { "title": "图" },
+        "graphs": "知识图谱",
+        "terminology_update": "术语与本体更新",
+        "kg_construction": "图谱构建",
+        "processing": "数据处理",
+        "recommendation": "推荐系统",
+        "recommendation_pipeline": "推荐流程",
+        "chat_interface": "对话推荐平台"
+
     }
+    },
+    "hierarchy": {
+    "structure": "Ontology 层级结构",
+    "showAll": "显示全部层级",
+    "hidePureSubclass": "隐藏纯子类",
+    "promptTitle": "Prompt 文本输出",
+    "copy": "复制",
+    "noData": "⚠️ 没有解析到本体层级结构"
+  } ,
+    "ontology": {
+      "edit_title": "编辑本体",
+      "graph_title": "本体图",
+      "title": "本体",
+      "editTitle": "编辑本体",
+      "structure": "本体结构",
+      "deleteMode": "进入删除模式",
+      "exitDeleteMode": "退出删除模式",
+      "noClasses": "⚠️ 未解析出类信息",
+      "selectParent": "选择父类",
+      "newClassName": "新类名",
+      "className": "类名",
+      "add": "添加",
+      "delete": "删除",
+      "confirmDeleteClass": "确定要删除类 \"{{className}}\" 吗？",
+      "confirmDeleteObjectProperty": "确定要删除对象属性 \"{{propName}}\" 吗？",
+      "confirmDeleteDataProperty": "确定要删除数据属性 \"{{propName}}\" 吗？",
+      "deleteSuccess": "✅ 删除成功",
+      "deleteFailed": "❌ 删除失败：{{error}}",
+      "networkError": "❌ 网络错误：{{error}}",
+      "addFailed": "❌ 添加失败：{{error}}",
+      "classTitle": "类结构",
+
+      "objectProperties": "对象属性",
+      "noObjectProps": "⚠️ 未解析出对象属性",
+      "propertyName": "属性名",
+      "selectDomain": "选择 Domain",
+      "selectRange": "选择 Range",
+
+      "dataProperties": "数据属性",
+      "noDataProps": "⚠️ 未解析出数据属性",
+      "selectClass": "所属类",
+      "selectType": "选择类型",
+
+      "resetGraph": "重置图谱",
+      "exportGraph": "导出图谱"
+    },
+    "kg": {
+  "upload_label": "上传文件格式要求",
+  "upload_button": "上传文件",
+  "no_file": "暂无文件",
+  "selected_file": "当前选择文件：",
+  "select_prompt": "请选择 Prompt 模板",
+  "prompt_placeholder": "请在这里填写你的 Prompt",
+  "extract_button": "提取 Triples",
+  "extracting": "提取中...",
+  "upload_neo4j": "上传到 Neo4j",
+  "status_title": "提取状态：",
+  "result_display": "提取结果展示"
 }
+,
+"rec": {
+  "rec.show_more_results": "显示另外 {{count}} 条",
+  "graph_results_candidates": "图谱查询结果（候选项）",
+  "graph_results_used": "最终推荐中使用的实体",
+  "show_more_results": "点击展开 {{count}} 条更多候选",
+  "input_label": "请输入推荐需求：",
+  "input_placeholder": "例如：我想在春天去北京赏花和吃美食",
+  "prompt_label": "Prompt 指令（引导LLM行为）",
+  "prompt_placeholder": "例如：请提取地点、时间、活动、餐厅，并生成结构化JSON",
+  "generate_button": "生成推荐",
+  "translation_result": "翻译结果：",
+  "parsed_result_title": "结构化信息提取结果",
+  "parsed_waiting": "等待生成...",
+  "cypher_title": "生成的 Cypher 查询语句",
+  "graph_results_title": "图谱查询结果（候选项）",
+  "graph_waiting": "等待查询结果...",
+  "final_title": "最终推荐输出（自然语言）",
+  "final_empty": "暂无推荐结果"
+}
+,
+    "terminology": {
+        "title": "术语推荐结果",
+        "empty": "暂无术语，请点击文件或按钮加载。",
+        "inputPlaceholder": "请输入本体层级结构文本（如从 Hierarchy 复制）",
+        "getSuggestion": "✨ 获取智能建议",
+        "noExpansion": "暂无可扩展的术语",
+        "alertMissing": "术语或本体结构缺失！",
+        "added": "你点击加入本体",
+        "upload_button": "上传术语文件",
+        "upload_success": "✅ 上传成功: {{filename}}",
+        "upload_fail": "❌ 上传失败",
+        "no_terms": "暂无可扩展的术语",
+        "suggest_button": "获取智能建议"
+      },
+    "knowledge": {
+      "overview_title": "知识总览",
+      "overview_intro": "在这里你可以探索<1>结构化的知识形态</1>，并了解<3>推荐流程</3>如何基于<5>动态知识更新</5>进行运作。",
+      "visualization_title": "可视化",
+      "visualization_intro": "以直观方式展示知识结构。",
+      "visualization_ontology": "本体图：展示核心概念及其定义的关系。",
+      "visualization_hierarchy": "层级结构：显示多层级的实体分类与依赖关系。",
+      "visualization_kg": "图谱可视化：支持交互式探索整个知识图谱。",
+      "graphs_title": "知识图谱",
+      "graphs_intro": "通过持续更新实现动态演化。",
+      "graphs_update": "术语与本体更新：引入新概念，更新本体结构。",
+      "graphs_construction": "图谱构建：从新数据中抽取实体和关系，保持图谱结构与本体同步。",
+      "graphs_processing": "数据处理：提升图谱的质量与一致性。",
+      "recommendation_title": "推荐系统",
+      "recommendation_intro": "<1>推荐流程</1>将知识图谱转化为实时个性化推荐结果。",
+      "recommendation_pipeline": "推荐流程"
+    },
+    "SUS_TITLE": "SUS 测评问卷",
+"SUS_CHAT_ID": "当前 Chat ID",
+"SUS_INTRO": "请根据您的体验，对以下每一项打分（1-5 分）",
+"SUS_QUESTION_PREFIX": "问题",
+"SUS_THANKS": "✅ 感谢提交！我们已记录您的评价。",
+"SUS_SUBMIT": "提交问卷",
+"SUS_SELECT_PLACEHOLDER": "请选择...",
+"SUS_ALERT": "请完成所有评分！",
+"SUS_QUESTIONS": [
+  "你觉得这个系统很容易使用吗？",
+  "你觉得这个系统容易理解吗？",
+  "你觉得这个系统功能一致吗？",
+  "你觉得大多数人都能快速上手使用这个系统吗？",
+  "你觉得这个系统的设计合理吗？",
+  "你觉得这个系统的各种功能都很完整吗？",
+  "你觉得这个系统连贯吗？",
+  "你觉得大多数人会学得很快。",
+  "你不需要在使用这个系统前学习很多东西。",
+  "系统推荐的内容是否符合你的需求？",
+  "你是否理解系统给出推荐的理由？",
+  "你是否信任系统推荐的内容？",
+  "你是否认为这个系统足够智能？",
+  "你是否觉得该系统具有创新性？",
+  "你觉得这个系统是否值得长期使用？",
+  "你是否愿意向他人推荐这个系统？",
+  "请留下您的任何补充意见或建议："
+]
+
+  }
+  

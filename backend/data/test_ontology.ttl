@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/> .
+
+# 定义两个类
+ex:TouristAttraction rdf:type owl:Class .
+ex:Restaurant rdf:type owl:Class .
+
+# 定义一个关系
+ex:locatedIn rdf:type rdf:Property ;
+             rdfs:domain ex:TouristAttraction ;
+             rdfs:range ex:City .
+
+# 定义两个个体
+ex:ForbiddenCity rdf:type ex:TouristAttraction ;
+                 ex:locatedIn ex:Beijing .
+ex:Beijing rdf:type ex:City ;
+           rdfs:label "北京" .

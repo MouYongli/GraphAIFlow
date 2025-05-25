@@ -7,12 +7,9 @@ export default function KnowledgeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
-
   return (
-    <div className="flex min-h-screen">
-      <KnowledgeSidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+    <div className="flex min-h-screen w-screen overflow-y-auto">
+      <KnowledgeSidebar/>
       {/* 页面内容 */}
       <main className="flex-1 p-4 bg-white text-gray-900">
         {children}

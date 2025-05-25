@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:ex="http://example.org/">
+  
+  <!-- 定义类 -->
+  <owl:Class rdf:about="http://example.org/TouristAttraction"/>
+  <owl:Class rdf:about="http://example.org/Restaurant"/>
+
+  <!-- 定义属性 -->
+  <rdf:Property rdf:about="http://example.org/locatedIn">
+    <rdfs:domain rdf:resource="http://example.org/TouristAttraction"/>
+    <rdfs:range rdf:resource="http://example.org/City"/>
+  </rdf:Property>
+
+  <!-- 定义个体 -->
+  <ex:TouristAttraction rdf:about="http://example.org/ForbiddenCity">
+    <ex:locatedIn rdf:resource="http://example.org/Beijing"/>
+  </ex:TouristAttraction>
+
+  <rdf:Description rdf:about="http://example.org/Beijing">
+    <rdf:type rdf:resource="http://example.org/City"/>
+    <rdfs:label>北京</rdfs:label>
+  </rdf:Description>
+
+</rdf:RDF>
